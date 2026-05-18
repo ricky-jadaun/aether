@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Rajeev Singh",
-    role: "IT MANAGER, Maringo Health Care.",
+    role: "IT MANAGER, Appolo Health Care.",
     content: "Their asset tracking approach has been instrumental in streamlining our hospital operations. The strategic implementation, real-time visibility, and customized workflows significantly improved asset utilization, reduced downtime, and strengthened overall operational efficiency.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
@@ -30,7 +30,7 @@ const Testimonials = () => {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-[#0062fe]">Clients Say</span>
+            What Our <span className="text-[#375ca1]">Clients Say</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Don't just take our word for it. Hear from the leaders who have transformed their businesses with our technology.
@@ -49,7 +49,7 @@ const Testimonials = () => {
               
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-[#0062fe] text-[#0062fe]" />
+                  <Star key={i} size={18} className="fill-[#375ca1] text-[#375ca1]" />
                 ))}
               </div>
 

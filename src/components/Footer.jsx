@@ -1,9 +1,11 @@
 import React from "react";
 import { Mail, Phone, Globe, Info } from "lucide-react";
 
-const FacebookIcon = ({ size = 18 }) => (
+const LinkedInIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect x="2" y="9" width="4" height="12"/>
+    <circle cx="4" cy="4" r="2"/>
   </svg>
 );
 
@@ -33,31 +35,24 @@ const Footer = () => {
     {
       title: "Industries",
       links: [
-        "Banking",
-        "Financial Services",
-        "Insurance",
-        "Government",
         "Retail",
-        "Health & Pharma",
-        "Renewable Energy",
+        "Factory Automation",
+        "Logistics",
+        "E-commerce",
+        "Quick Commerce",
       ],
     },
     {
       title: "Products",
       links: [
-        "Smart Cards",
-        "Payment Cards",
-        "Metal Cards",
-        "Payment Wearables",
-        "Active RFID Technology",
-        "RFID powered IoT Solutions",
-        "RFID IoT solutions for BFSI",
-        "Secure Banking Instruments",
+        "RFID",
+        "IOT",
+        "Software Solution",
       ],
     },
     {
       title: "Company",
-      links: ["About Us", "Contact", "Management", "Investors", "Core Strength"],
+      links: ["About Us", "Contact", "Management",  "Blogs", "Careers"],
     },
   ];
 
@@ -102,16 +97,16 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0062fe] hover:text-white transition-all shadow-sm">
-                <FacebookIcon size={18} />
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
+                <LinkedInIcon size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0062fe] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
                 <TwitterIcon size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0062fe] hover:text-white transition-all shadow-sm">
+              {/* <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
                 <InstagramIcon size={18} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0062fe] hover:text-white transition-all shadow-sm">
+              </a> */}
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
                 <YoutubeIcon size={18} />
               </a>
             </div>
@@ -126,7 +121,7 @@ const Footer = () => {
                   <li key={i}>
                     <a
                       href="#"
-                      className="text-gray-500 font-medium hover:text-[#0062fe] transition-colors duration-300"
+                      className="text-gray-500 font-medium hover:text-[#375ca1] transition-colors duration-300"
                     >
                       {link}
                     </a>

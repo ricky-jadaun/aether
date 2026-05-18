@@ -12,19 +12,15 @@ const Header = () => {
     },
     {
       name: "Technologies",
-      dropdown: ["AI Solutions", "Cloud", "IoT"],
+      dropdown: ["RFID", "IOT", "Barcodes"],
     },
     {
       name: "Products",
-      dropdown: ["Biometric", "RFID", "Access Control"],
+      dropdown: ["RFID", "IOT", "Software Solution"],
     },
     {
       name: "Industry",
-      dropdown: ["Healthcare", "Education", "Enterprise"],
-    },
-    {
-      name: "Investors",
-      dropdown: ["Reports", "Financials", "News"],
+      dropdown: ["Retail", "Factory Automation", "Logistics", "E-commerce", "Quick Commerce"],
     },
     {
       name: "Blogs",
@@ -32,16 +28,16 @@ const Header = () => {
     },
   ];
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#07050b]/90 backdrop-blur-md text-white border-b border-white/10">
+    <header className="sticky top-0 z-50 w-full bg-[#ffffff]/90 backdrop-blur-md text-[#375ca1] border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer">
             {/* Logo Image */}
             <img
-              src="/assets/aether-logo.png"
+              src="/assets/Aether-rfid.png"
               alt="Logo"
-              className="h-12 lg:h-14 w-auto object-contain"
+              className="w-18 lg:w-24 h-auto object-contain"
             />
           </div>
 
@@ -54,14 +50,14 @@ const Header = () => {
                 onMouseEnter={() => setDropdown(index)}
                 onMouseLeave={() => setDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-[15px] font-medium hover:text-[#0062fe] transition duration-300">
+                <button className="flex items-center gap-1 text-[16px] font-medium hover:text-[#375ca1] transition duration-300">
                   {item.name}
                   <ChevronDown size={16} />
                 </button>
 
                 {/* Dropdown */}
                 <div
-                  className={`absolute top-[45px] left-0 w-[220px] bg-[#111] border border-white/10 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
+                  className={`absolute top-[50px] left-0 w-[220px] bg-[#111] border border-white/10 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
                     dropdown === index
                       ? "opacity-100 visible translate-y-0"
                       : "opacity-0 invisible translate-y-3"
@@ -71,7 +67,7 @@ const Header = () => {
                     <a
                       key={i}
                       href="/"
-                      className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#0062fe] transition"
+                      className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
                     >
                       {drop}
                     </a>
@@ -81,7 +77,7 @@ const Header = () => {
             ))}
 
             {/* Button */}
-            <button className="bg-[#0062fe] border-2 border-[#0062fe] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-[#0062fe] hover:scale-105 transition duration-300">
+            <button className="bg-[#375ca1] border-2 border-[#375ca1] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-[#375ca1] hover:scale-105 transition duration-300">
               Contact Us
             </button>
           </div>
@@ -138,7 +134,7 @@ const Header = () => {
               </div>
             ))}
 
-            <button className="bg-[#0062fe] border-2 border-[#0062fe] text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-[#0062fe]">
+            <button className="bg-[#375ca1] border-2 border-[#375ca1] text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-[#375ca1] lg:hover:scale-105 transition duration-300">
               Contact Us
             </button>
           </div>

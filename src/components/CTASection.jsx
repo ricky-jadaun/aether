@@ -17,7 +17,7 @@ const CTASection = () => {
               alt="Connect with us" 
               className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0062fe]/50 via-[#0062fe]/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#375ca1]/50 via-[#375ca1]/30 to-transparent"></div>
             
             <div className="relative z-10 p-12 flex flex-col justify-center text-white">
               <span className="text-white/80 font-bold tracking-widest uppercase text-sm mb-6 block">Ready to start?</span>
@@ -35,7 +35,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-white/60">Email us at</p>
-                    <p className="font-semibold">marketing@seshaasai.com</p>
+                    <p className="font-semibold">aether@rfid.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -44,7 +44,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-white/60">Call us</p>
-                    <p className="font-semibold">+91 8976 777 299</p>
+                    <p className="font-semibold">+91 7042436155</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -53,7 +53,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-white/60">Address</p>
-                    <p className="font-semibold">9, Lalwani Industrial Estate, 14 Katrak Road, Wadala, Mumbai - 400 031.</p>
+                    <p className="font-semibold">211, 3rd Floor , Okhla Industrial Estate, Phase 3 New Delhi-110020.</p>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@ const CTASection = () => {
                     <input 
                       type="text" 
                       placeholder="Nikhil"
-                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#0062fe] focus:bg-white focus:ring-4 focus:ring-[#0062fe]/5 outline-none transition-all"
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -81,7 +81,7 @@ const CTASection = () => {
                     <input 
                       type="text" 
                       placeholder="Sisodia"
-                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#0062fe] focus:bg-white focus:ring-4 focus:ring-[#0062fe]/5 outline-none transition-all"
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const CTASection = () => {
                   <input 
                     type="email" 
                     placeholder="nikhil@sisodia.com"
-                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#0062fe] focus:bg-white focus:ring-4 focus:ring-[#0062fe]/5 outline-none transition-all"
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
                   />
                 </div>
 
@@ -100,13 +100,13 @@ const CTASection = () => {
                   <textarea 
                     placeholder="Tell us about your project..."
                     rows="4"
-                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#0062fe] focus:bg-white focus:ring-4 focus:ring-[#0062fe]/5 outline-none transition-all resize-none"
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
                 <button 
                   type="submit"
-                  className="w-full bg-[#000000] text-white font-semibold py-5 rounded-2xl shadow-lg shadow-[#0062fe]/25 hover:shadow-[#0062fe]/40 hover:bg-[#0062fe]  active:scale-[0.98] transition-all flex items-center justify-center gap-3 group"
+                  className="w-full bg-[#375ca1] text-white font-semibold py-5 rounded-2xl shadow-lg shadow-[#375ca1]/25 hover:shadow-[#375ca1]/40 hover:bg-[#000000]  active:scale-[0.98] transition-all flex items-center justify-center gap-3 group"
                 >
                   Send Message
                   <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

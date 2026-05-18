@@ -18,10 +18,10 @@ const AboutUs = () => {
             </div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-10 -right-10 z-20 bg-[#0062fe] text-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block">
+            {/* <div className="absolute -bottom-10 -right-10 z-20 bg-[#0062fe] text-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block">
               <p className="text-5xl font-bold mb-1">15+</p>
               <p className="text-sm font-medium uppercase tracking-widest opacity-80">Years of<br />Excellence</p>
-            </div>
+            </div> */}
 
             {/* Background Shape */}
             <div className="absolute -top-10 -left-10 w-64 h-64 bg-blue-50 rounded-full -z-10 blur-3xl"></div>
@@ -29,13 +29,13 @@ const AboutUs = () => {
 
           {/* Right Side: Content */}
           <div className="lg:w-1/2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#0062fe] font-bold text-sm mb-2 uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-[#0062fe]"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#375ca1] font-bold text-sm mb-2 uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-[#375ca1]"></span>
               About Aether
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Driving Innovation Through <span className="text-[#0062fe]">Technology</span>
+              Driving Innovation Through <span className="text-[#375ca1]">Technology</span>
             </h2>
             
             <p className="text-lg text-gray-600 mb-12 leading-relaxed">
@@ -44,7 +44,7 @@ const AboutUs = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#0062fe]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#375ca1]">
                   <Target size={24} />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
               </div>
               
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#0062fe]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#375ca1]">
                   <Award size={24} />
                 </div>
                 <div>
@@ -74,7 +74,7 @@ const AboutUs = () => {
               </div>
             </div> */}
 
-            <button className="mt-12 flex items-center gap-3 bg-[#000000] text-white px-10 py-5 rounded-2xl font-semibold hover:bg-[#0062fe] hover:shadow-2xl hover:shadow-[#0062fe]/20 transition-all duration-300 group">
+            <button className="mt-12 flex items-center gap-3 bg-[#375ca1] text-white px-10 py-5 rounded-2xl font-semibold hover:bg-[#000000] hover:shadow-2xl hover:shadow-[#375ca1]/20 transition-all duration-300 group">
               Learn More About Us
               <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </button>
