@@ -10,7 +10,7 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="/assets/aether-hero-vdo.mp4"
+          src="/assets/aether-rfid-one.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
