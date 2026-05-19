@@ -28,7 +28,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#ffffff]/90 backdrop-blur-md text-[#375ca1] border-b border-white/10">
+    <header className="sticky top-0 z-50 w-full bg-[#ffffff]/90 backdrop-blur-md text-[#259350] border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
@@ -50,14 +50,14 @@ const Header = () => {
                 onMouseEnter={() => setDropdown(index)}
                 onMouseLeave={() => setDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-[16px] font-medium hover:text-[#375ca1] transition duration-300">
+                <button className="flex items-center gap-1 text-[16px] font-medium hover:text-[#259350] transition duration-300">
                   {item.name}
                   <ChevronDown size={16} />
                 </button>
 
                 {/* Dropdown */}
                 <div
-                  className={`absolute top-[50px] left-0 w-[220px] bg-[#111] border border-white/10 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
+                  className={`absolute top-[45px] left-0 w-[220px] bg-[#259350] border border-white/10 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
                     dropdown === index
                       ? "opacity-100 visible translate-y-0"
                       : "opacity-0 invisible translate-y-3"
@@ -77,7 +77,7 @@ const Header = () => {
             ))}
 
             {/* Button */}
-            <button className="bg-[#375ca1] border-2 border-[#375ca1] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-[#375ca1] hover:scale-105 transition duration-300">
+            <button className="bg-[#259350] border-2 border-[#259350] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-[#259350] hover:scale-105 transition duration-300">
               Contact Us
             </button>
           </div>
@@ -134,7 +134,7 @@ const Header = () => {
               </div>
             ))}
 
-            <button className="bg-[#375ca1] border-2 border-[#375ca1] text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-[#375ca1] lg:hover:scale-105 transition duration-300">
+            <button className="bg-[#259350] border-2 border-[#259350] text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-[#259350] lg:hover:scale-105 transition duration-300">
               Contact Us
             </button>
           </div>

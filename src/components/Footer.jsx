@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <div className="mb-6">
               <div className="flex items-center gap-3 cursor-pointer">
-                <img src="/assets/aether-logo-black.png" alt="Logo"
+                <img src="/assets/Aether-rfid.png" alt="Logo"
                   className="h-14 lg:h-18 w-auto object-contain"
                 />
               </div>
@@ -97,16 +97,16 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
                 <LinkedInIcon size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
                 <TwitterIcon size={18} />
               </a>
-              {/* <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
+              {/* <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
                 <InstagramIcon size={18} />
               </a> */}
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#375ca1] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
                 <YoutubeIcon size={18} />
               </a>
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
                   <li key={i}>
                     <a
                       href="#"
-                      className="text-gray-500 font-medium hover:text-[#375ca1] transition-colors duration-300"
+                      className="text-gray-500 font-medium hover:text-[#259350] transition-colors duration-300"
                     >
                       {link}
                     </a>

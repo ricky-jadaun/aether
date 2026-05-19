@@ -29,13 +29,13 @@ const AboutUs = () => {
 
           {/* Right Side: Content */}
           <div className="lg:w-1/2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#375ca1] font-bold text-sm mb-2 uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-[#375ca1]"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#259350] font-bold text-sm mb-2 uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-[#259350]"></span>
               About Aether
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Driving Innovation Through <span className="text-[#375ca1]">Technology</span>
+              Driving Innovation Through <span className="text-[#259350]">Technology</span>
             </h2>
             
             <p className="text-lg text-gray-600 mb-12 leading-relaxed">
@@ -44,7 +44,7 @@ const AboutUs = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#375ca1]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#259350]">
                   <Target size={24} />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
               </div>
               
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#375ca1]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#259350]">
                   <Award size={24} />
                 </div>
                 <div>
@@ -74,7 +74,7 @@ const AboutUs = () => {
               </div>
             </div> */}
 
-            <button className="mt-12 flex items-center gap-3 bg-[#375ca1] text-white px-10 py-5 rounded-2xl font-semibold hover:bg-[#000000] hover:shadow-2xl hover:shadow-[#375ca1]/20 transition-all duration-300 group">
+            <button className="mt-12 flex items-center gap-3 bg-[#259350] text-white px-10 py-5 rounded-2xl font-semibold hover:bg-[#000000] hover:shadow-2xl hover:shadow-[#259350]/20 transition-all duration-300 group">
               Learn More About Us
               <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </button>

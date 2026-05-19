@@ -51,7 +51,7 @@ const SolutionsSection = () => {
           </h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-[2px] w-12 md:w-20 bg-gray-300"></div>
-            <div className="w-3 h-3 rounded-full bg-[#375ca1]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#259350]"></div>
             <div className="h-[2px] w-12 md:w-20 bg-gray-300"></div>
           </div>
         </div>

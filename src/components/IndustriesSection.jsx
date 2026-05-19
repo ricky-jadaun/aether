@@ -82,7 +82,7 @@ const IndustriesSection = () => {
   };
 
   return (
-    <section className="bg-[#375ca1] py-20 md:py-28 flex flex-col items-center overflow-hidden">
+    <section className="bg-[#259350] py-20 md:py-28 flex flex-col items-center overflow-hidden">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           What Makes Us Your Trusted Partner
@@ -138,7 +138,7 @@ const IndustriesSection = () => {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
                     {/* The Green Box Overlay */}
-                    <div className="absolute inset-4 bg-[#375ca1]/90 flex flex-col items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <div className="absolute inset-4 bg-[#259350]/90 flex flex-col items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                       <h3 className="text-white font-bold text-2xl mb-4">{item.title}</h3>
                       <p className="text-white text-sm leading-relaxed">
                         {item.description}

@@ -25,11 +25,11 @@ const stats = [
 
 const CounterSection = () => {
   return (
-    <section className="py-20 bg-[#375ca1] relative overflow-hidden">
+    <section className="py-20 bg-[#259350] relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[60%] bg-[#375ca1] rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[60%] bg-[#375ca1] rounded-full blur-[120px]"></div>
+        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[60%] bg-[#259350] rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[60%] bg-[#259350] rounded-full blur-[120px]"></div>
       </div>
 
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
@@ -37,9 +37,9 @@ const CounterSection = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#375ca1]/50 transition-all duration-500 hover:bg-white/[0.08] text-center md:text-left flex flex-col items-center md:items-start"
+              className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#259350]/50 transition-all duration-500 hover:bg-white/[0.08] text-center md:text-left flex flex-col items-center md:items-start"
             >
-              <div className="w-16 h-16 rounded-2xl bg-[#375ca1] flex items-center justify-center mb-6 shadow-lg shadow-[#375ca1]/20 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-[#259350] flex items-center justify-center mb-6 shadow-lg shadow-[#259350]/20 group-hover:scale-110 transition-transform duration-500">
                 {stat.icon}
               </div>
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">

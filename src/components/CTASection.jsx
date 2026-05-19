@@ -4,7 +4,7 @@ const CTASection = () => {
   return (
     <section className="py-24 bg-white overflow-hidden" id="contact">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
-        <div className="bg-[#0062fe] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row relative">
+        <div className="bg-[#259350] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row relative">
           
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -17,7 +17,7 @@ const CTASection = () => {
               alt="Connect with us" 
               className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#375ca1]/50 via-[#375ca1]/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#259350]/50 via-[#259350]/30 to-transparent"></div>
             
             <div className="relative z-10 p-12 flex flex-col justify-center text-white">
               <span className="text-white/80 font-bold tracking-widest uppercase text-sm mb-6 block">Ready to start?</span>
@@ -73,7 +73,7 @@ const CTASection = () => {
                     <input 
                       type="text" 
                       placeholder="Nikhil"
-                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#259350] focus:bg-white focus:ring-4 focus:ring-[#259350]/5 outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -81,7 +81,7 @@ const CTASection = () => {
                     <input 
                       type="text" 
                       placeholder="Sisodia"
-                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
+                      className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#259350] focus:bg-white focus:ring-4 focus:ring-[#259350]/5 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const CTASection = () => {
                   <input 
                     type="email" 
                     placeholder="nikhil@sisodia.com"
-                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all"
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#259350] focus:bg-white focus:ring-4 focus:ring-[#259350]/5 outline-none transition-all"
                   />
                 </div>
 
@@ -100,13 +100,13 @@ const CTASection = () => {
                   <textarea 
                     placeholder="Tell us about your project..."
                     rows="4"
-                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#375ca1] focus:bg-white focus:ring-4 focus:ring-[#375ca1]/5 outline-none transition-all resize-none"
+                    className="w-full px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#259350] focus:bg-white focus:ring-4 focus:ring-[#259350]/5 outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
                 <button 
                   type="submit"
-                  className="w-full bg-[#375ca1] text-white font-semibold py-5 rounded-2xl shadow-lg shadow-[#375ca1]/25 hover:shadow-[#375ca1]/40 hover:bg-[#000000]  active:scale-[0.98] transition-all flex items-center justify-center gap-3 group"
+                  className="w-full bg-[#259350] text-white font-semibold py-5 rounded-2xl shadow-lg shadow-[#259350]/25 hover:shadow-[#259350]/40 hover:bg-[#000000]  active:scale-[0.98] transition-all flex items-center justify-center gap-3 group"
                 >
                   Send Message
                   <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

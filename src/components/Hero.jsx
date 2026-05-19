@@ -29,7 +29,7 @@ const Hero = () => {
           At Aether-RFID, our mission is to deliver cost-effective, high-quality RFID and IoT solutions that solve modern business connectivity challenges through reliable services, innovation, and long-term partnerships.
         </p>
 
-        <button className="bg-[#375ca1] border-2 border-[#375ca1] text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-[#ffffff] hover:text-[#375ca1] hover:scale-105 transition-all duration-300">
+        <button className="bg-[#259350] border-2 border-[#259350] text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-[#ffffff] hover:text-[#259350] hover:scale-105 transition-all duration-300">
           Explore our products
         </button>
 

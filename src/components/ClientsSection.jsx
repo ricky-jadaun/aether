@@ -60,7 +60,7 @@ const ClientsSection = () => {
           </h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-[2px] w-20 bg-gray-200"></div>
-            <div className="w-3 h-3 rounded-full bg-[#0062fe]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#259350]"></div>
             <div className="h-[2px] w-20 bg-gray-200"></div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const ClientsSection = () => {
             onClick={() => setCurrentIndex(index)}
             className={`transition-all duration-300 rounded-full ${
               currentIndex === index 
-                ? "w-3 h-3 bg-[#0062fe]" 
+                ? "w-3 h-3 bg-[#259350]" 
                 : "w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400"
             }`}
             aria-label={`Go to slide ${index + 1}`}
