@@ -84,7 +84,7 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <div className="mb-6">
-              <div className="flex items-center gap-3 cursor-pointer">
+              <div className="flex  items-center gap-3 cursor-pointer">
                 <img src="/assets/Aether-rfid.png" alt="Logo"
                   className="h-14 lg:h-18 w-auto object-contain"
                 />
@@ -92,7 +92,7 @@ const Footer = () => {
             </div>
 
             <p className="font-semibold text-gray-800 mb-6 max-w-md">
-              AETHER RFID Technologies Limited (Formerly known as AETHER RFID Business Forms Limited)
+              AETHER RFID Technologies Limited
             </p>
 
             {/* Social Icons */}

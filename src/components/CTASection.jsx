@@ -4,7 +4,7 @@ const CTASection = () => {
   return (
     <section className="py-24 bg-white overflow-hidden" id="contact">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
-        <div className="bg-[#259350] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row relative">
+        <div className="bg-[#32599e] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row relative">
           
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -17,7 +17,7 @@ const CTASection = () => {
               alt="Connect with us" 
               className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#259350]/50 via-[#259350]/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#32599e]/50 via-[#32599e]/30 to-transparent"></div>
             
             <div className="relative z-10 p-12 flex flex-col justify-center text-white">
               <span className="text-white/80 font-bold tracking-widest uppercase text-sm mb-6 block">Ready to start?</span>
@@ -35,7 +35,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-white/60">Email us at</p>
-                    <p className="font-semibold">aether@rfid.com</p>
+                    <p className="font-semibold">info@aetherrfid.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

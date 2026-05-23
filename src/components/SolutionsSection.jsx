@@ -1,136 +1,240 @@
-import { Settings, Factory, Globe, IndianRupee, Truck, Headset, Cpu } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { 
+  Settings, 
+  Factory, 
+  Globe, 
+  IndianRupee, 
+  Truck, 
+  Headset, 
+  Cpu,
+  ChevronLeft,
+  ChevronRight
+} from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const solutions = [
+  {
+    id: 1,
+    name: "Customized Solutions",
+    icon: <Settings size={32} />,
+    description: "Understanding that no two organizations are alike, we deliver personalized products and services to precisely match your requirements, ensuring adaptability in fast-evolving markets like autonomous vehicles and precision agriculture.",
+    image: "/assets/solutions/CustomizedSolutions.jpg"
+  },
+  {
+    id: 2,
+    name: "State-of-the-Art Facilities",
+    icon: <Factory size={32} />,
+    description: "Located in Delhi, our advanced production and R&D centers guarantee products that uphold the highest quality standards, from design to delivery.",
+    image: "/assets/solutions/state-of-art.jpg"
+  },
+  {
+    id: 3,
+    name: "International Standards Compliance",
+    icon: <Globe size={32} />,
+    description: "All our offerings—RFID tags, labels, GPS/GNSS devices, and sensors—adhere to global benchmarks, ensuring compatibility, reliability, and seamless integration worldwide.",
+    image: "/assets/solutions/InternationalStandardsCompliance.jpg"
+  },
+  {
+    id: 4,
+    name: "Affordability",
+    icon: <IndianRupee size={32} />,
+    description: "We prioritize value, offering premium solutions at competitive prices to maximize your ROI without compromising on innovation or performance.",
+    image: "/assets/solutions/affordability.jpg"
+  },
+  {
+    id: 5,
+    name: "Timely Delivery",
+    icon: <Truck size={32} />,
+    description: "Our commitment to punctuality minimizes operational downtime, supporting your business continuity in an increasingly interconnected global economy.",
+    image: "/assets/solutions/timely-deliver.jpg"
+  },
+  {
+    id: 6,
+    name: "Expert Support",
+    icon: <Headset size={32} />,
+    description: "Dedicated assistance and responsive service to ensure seamless operations, reduced downtime, and maximum business efficiency.",
+    image: "/assets/solutions/support.jpg"
+  },
+  {
+    id: 7,
+    name: "Smart Integration",
+    icon: <Cpu size={32} />,
+    description: "Advanced RFID and IoT solutions that integrate effortlessly with modern technologies, Industry 4.0 systems, and smart business ecosystems.",
+    image: "/assets/solutions/standard-quality.jpg"
+  }
+];
 
 const SolutionsSection = () => {
-  const solutions = [
-    {
-      name: "Customized Solutions",
-      icon: <Settings size={24} />,
-      description: "Understanding that no two organizations are alike, we deliver personalized products and services to precisely match your requirements, ensuring adaptability in fast-evolving markets like autonomous vehicles and precision agriculture.",
-    },
-    {
-      name: "State-of-the-Art Facilities",
-      icon: <Factory size={24} />,
-      description: "Located in Delhi, our advanced production and R&D centers guarantee products that uphold the highest quality standards, from design to delivery.",
-    },
-    {
-      name: "International Standards Compliance",
-      icon: <Globe size={24} />,
-      description: "All our offerings—RFID tags, labels, GPS/GNSS devices, and sensors—adhere to global benchmarks, ensuring compatibility, reliability, and seamless integration worldwide.",
-    },
-    {
-      name: "Affordability",
-      icon: <IndianRupee size={24} />,
-      description: "We prioritize value, offering premium solutions at competitive prices to maximize your ROI without compromising on innovation or performance.",
-    },
-    {
-      name: "Timely Delivery",
-      icon: <Truck size={24} />,
-      description: "Our commitment to punctuality minimizes operational downtime, supporting your business continuity in an increasingly interconnected global economy.",
-    },
-    {
-      name: "Expert Support",
-      icon: <Headset size={24} />,
-      description: "Dedicated assistance and responsive service to ensure seamless operations, reduced downtime, and maximum business efficiency.",
-    },
-    {
-      name: "Smart Integration",
-      icon: <Cpu size={24} />,
-      description: "Advanced RFID and IoT solutions that integrate effortlessly with modern technologies, Industry 4.0 systems, and smart business ecosystems.",
-    },
-  ];
+  const [activeIndex, setActiveIndex] = useState(3); // Default to middle item
+  const [isPaused, setIsPaused] = useState(false);
 
-  const colors = ["#c1d72e", "#333c46", "#e91e63", "#20b2d0"];
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % solutions.length);
+    }, 3500); // Change every 3.5 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
-    <section className="bg-[#f9f9f9] py-16 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="bg-[#32599e] py-16 md:py-24 overflow-hidden relative min-h-[600px] md:min-h-[800px] flex flex-col items-center justify-start">
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 uppercase tracking-tight">
-            Why Choose Us?
+        <div className="text-center mb-12 md:mb-55">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 uppercase tracking-wide">
+            Why Choose us?
           </h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-[2px] w-12 md:w-20 bg-gray-300"></div>
-            <div className="w-3 h-3 rounded-full bg-[#259350]"></div>
-            <div className="h-[2px] w-12 md:w-20 bg-gray-300"></div>
-          </div>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gray-200 hidden md:block"></div>
+        {/* Desktop View (Semi-circular layout) */}
+        <div 
+          className="hidden md:block relative w-full max-w-5xl mx-auto h-[500px]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Path Circles (Decorative) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-dashed border-white/10 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-dotted border-white/5 rounded-full"></div>
 
-          <div className="space-y-12 md:space-y-0">
-            {solutions.map((item, index) => {
-              const isEven = index % 2 === 0;
-              const bgColor = colors[index % colors.length];
+          {/* Central Content Card */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[360px] transition-all duration-500 transform scale-110">
+            <div className="bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="relative h-50 overflow-hidden">
+                <img 
+                  src={solutions[activeIndex].image} 
+                  alt={solutions[activeIndex].name}
+                  className="w-full h-full object-cover transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <h3 className="text-white font-bold text-lg uppercase tracking-widest">
+                    {solutions[activeIndex].name}
+                  </h3>
+                </div>
+              </div>
+              <div className="p-4 text-center">
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {solutions[activeIndex].description}
+                </p>
+              </div>
+            </div>
+          </div>
 
-              return (
-                <div
-                  key={index}
-                  className={`flex flex-col md:flex-row items-center w-full ${
-                    isEven ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Description Side */}
-                  <div className="w-full md:w-1/2 px-4 md:px-12 py-6">
-                    <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${
-                      isEven ? "md:text-right" : "md:text-left"
-                    }`}>
+          {/* Circular Items */}
+          {solutions.map((item, index) => {
+            // Calculate position on the arc
+            const startAngle = 210;
+            const endAngle = -30;
+            const angle = startAngle + (index * (endAngle - startAngle) / (solutions.length - 1));
+            const radian = (angle * Math.PI) / 180;
+            const radius = 350; // Radius of the arc
+            
+            const x = Math.cos(radian) * radius;
+            const y = -Math.sin(radian) * radius; 
+
+            const isActive = activeIndex === index;
+
+            return (
+              <div
+                key={item.id}
+                className="absolute top-1/2 left-1/2 transition-all duration-300"
+                style={{
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                }}
+                onMouseEnter={() => setActiveIndex(index)}
+              >
+                <div className="flex flex-col items-center gap-3 cursor-pointer group">
+                  <div 
+                    className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 border-2 
+                      ${isActive 
+                        ? "bg-[#259350] border-white scale-125 shadow-lg shadow-[#259350]/50" 
+                        : "bg-white/5 border-white/20 group-hover:bg-white/10 group-hover:scale-110"
+                      }`}
+                  >
+                    <div className={isActive ? "text-white" : "text-gray-400 group-hover:text-white"}>
+                      {item.icon}
+                    </div>
+                  </div>
+                  <span className={`text-xs md:text-sm font-medium text-center max-w-[100px] transition-all duration-300 ${isActive ? 'text-white opacity-100' : 'text-gray-400 opacity-70 group-hover:opacity-100 group-hover:text-white'}`}>
+                    {item.name}
+                  </span>
+                  
+                  {/* Decorative line connecting to center */}
+                  {isActive && (
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#259350]/30 to-transparent transform"
+                         style={{ transform: `rotate(${angle}deg)` }}></div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Mobile View (Swiper Carousel) */}
+        <div className="md:hidden w-full">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation={{
+                prevEl: '.swiper-button-prev-custom',
+                nextEl: '.swiper-button-next-custom',
+            }}
+            pagination={{ clickable: true, dynamicBullets: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            className="pb-12"
+          >
+            {solutions.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 mx-4">
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4">
+                        <div className="bg-[#259350] p-3 rounded-full text-white mb-2 shadow-lg">
+                            {item.icon}
+                        </div>
+                    </div>
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-white font-bold text-lg uppercase mb-3 tracking-wide">
+                        {item.name}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>
-
-                  {/* Spacer for Line (Hidden in Mobile, or use as dot) */}
-                  <div className="relative md:w-0 flex justify-center z-10">
-                    <div className="w-3 h-3 rounded-full bg-gray-200 border-2 border-white md:hidden mb-4"></div>
-                  </div>
-
-                  {/* Title and Icon Side */}
-                  <div
-                    className={`w-full md:w-1/2 flex items-center px-4 md:px-12 ${
-                      isEven ? "justify-start" : "justify-end"
-                    }`}
-                  >
-                    <div className={`flex items-center w-full ${isEven ? "flex-row" : "flex-row-reverse"}`}>
-                      {/* Colored Ribbon Box */}
-                      <div className="relative flex-grow max-w-[320px]">
-                        {/* Shadow effect to mimic the slit/fold in image */}
-                        <div 
-                          className={`absolute top-2 -bottom-2 w-8 bg-black/10 blur-md z-0 ${
-                            isEven ? "-left-4" : "-right-4"
-                          }`}
-                        ></div>
-                         
-                        <div
-                          style={{ backgroundColor: bgColor }}
-                          className={`h-12 md:h-14 flex items-center px-6 text-white font-bold text-sm md:text-base uppercase tracking-wider shadow-xl relative z-10 ${
-                             isEven ? "rounded-r-md" : "rounded-l-md"
-                          }`}
-                        >
-                          <span className="truncate">{item.name}</span>
-                          
-                          {/* Inner shadow on the line-side to give depth */}
-                          <div className={`absolute top-0 bottom-0 w-4 bg-black/30 ${isEven ? 'left-0' : 'right-0'}`}></div>
-                        </div>
-                      </div>
-
-                      {/* Icon Circle */}
-                      <div className={`flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 bg-white shadow-sm mx-4`}>
-                        {item.icon}
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              );
-            })}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          <div className="flex justify-center gap-4 mt-4">
+             <button className="swiper-button-prev-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-[#259350] transition-colors">
+                <ChevronLeft size={20} />
+             </button>
+             <button className="swiper-button-next-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-[#259350] transition-colors">
+                <ChevronRight size={20} />
+             </button>
           </div>
         </div>
       </div>
+
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-0 right-0 h-32  pointer-events-none"></div>
     </section>
   );
 };
 
 export default SolutionsSection;
-

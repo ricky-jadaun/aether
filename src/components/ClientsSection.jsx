@@ -1,14 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const clients = [
-  { name: 'Aether 1', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 2', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 3', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 4', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 5', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 6', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 7', logo: '/assets/aether-logo-black.png' },
-  { name: 'Aether 8', logo: '/assets/aether-logo-black.png' },
+  { name: 'Aether 1', logo: '/assets/logos/aditya-birla.png' },
+  { name: 'Aether 2', logo: '/assets/logos/amul.png' },
+  { name: 'Aether 3', logo: '/assets/logos/appolo-hospital.png' },
+  { name: 'Aether 4', logo: '/assets/logos/delhi-metro.png' },
+  { name: 'Aether 5', logo: '/assets/logos/hcl-tech.png' },
+  { name: 'Aether 6', logo: '/assets/logos/indian-army.png' },
+  { name: 'Aether 7', logo: '/assets/logos/indian-oil.png' },
+  { name: 'Aether 8', logo: '/assets/logos/indian-rail.png' },
+  { name: 'Aether 8', logo: '/assets/logos/kpn-fresh.png' },
+  { name: 'Aether 8', logo: '/assets/logos/maruti-suzuki.png' },
+  { name: 'Aether 8', logo: '/assets/logos/motherson.png' },
+  { name: 'Aether 8', logo: '/assets/logos/suzuki.png' },
+  { name: 'Aether 8', logo: '/assets/logos/vayu-sena.png' },
 ];
 
 const ClientsSection = () => {
@@ -77,7 +82,7 @@ const ClientsSection = () => {
                 className="flex-shrink-0 px-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
                 style={{ width: `${100 / itemsToShow}%` }}
               >
-                <div className="h-20 w-full flex items-center justify-center p-2">
+                <div className="h-24 w-full flex items-center justify-center p-2">
                   <img 
                     src={client.logo} 
                     alt={client.name} 
