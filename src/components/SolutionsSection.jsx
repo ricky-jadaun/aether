@@ -188,7 +188,6 @@ const SolutionsSection = () => {
                 prevEl: '.swiper-button-prev-custom',
                 nextEl: '.swiper-button-next-custom',
             }}
-            pagination={{ clickable: true, dynamicBullets: true }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             className="pb-12"
           >
