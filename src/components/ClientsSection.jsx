@@ -61,7 +61,7 @@ const ClientsSection = () => {
     <section className="bg-white py-20 md:py-28 flex flex-col items-center overflow-hidden">
       <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            OUR CLIENTS AND PARTNERS!
+            OUR CLIENTS
           </h2>
           <div className="flex items-center justify-center gap-4">
             <div className="h-[2px] w-20 bg-gray-200"></div>
