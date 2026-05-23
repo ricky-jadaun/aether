@@ -6,12 +6,12 @@ const AchieveMore = () => {
 
   const cards = [
     {
-      icon: <Rocket className="w-8 h-8 text-[#259350]" />,
+      icon: <Rocket className="w-8 h-8 text-brand-green" />,
       heading: "Strategic Planning",
       description: "A methodical approach to setting goals, making informed decisions, and driving business growth.",
     },
     {
-      icon: <ShieldCheck className="w-8 h-8 text-[#259350]" />,
+      icon: <ShieldCheck className="w-8 h-8 text-brand-green" />,
       heading: "Customize Solution",
       description: "Tailored strategies and tools, designed to perfectly address your unique business needs.",
     },
@@ -37,7 +37,7 @@ const AchieveMore = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
         {/* Left Side - Headings */}
         <div className="lg:w-1/2 text-left">
-          <p className="text-[#259350] font-semibold tracking-wider uppercase mb-4">
+          <p className="text-brand-green font-semibold tracking-wider uppercase mb-4">
             Achieve More
           </p>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
@@ -78,13 +78,13 @@ const AchieveMore = () => {
           <div className="flex gap-4 mt-6 justify-center md:justify-end ">
             <button
               onClick={prevCard}
-              className="p-3 rounded-full border border-gray-200 text-gray-600 hover:bg-[#259350] hover:text-white hover:border-[#0062fe] transition-all duration-300 cursor-pointer"
+              className="p-3 rounded-full border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all duration-300 cursor-pointer"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextCard}
-              className="p-3 rounded-full border border-gray-200 text-gray-600 hover:bg-[#259350] hover:text-white hover:border-[#0062fe] transition-all duration-300 cursor-pointer"
+              className="p-3 rounded-full border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all duration-300 cursor-pointer"
             >
               <ChevronRight className="w-6 h-6" />
             </button>

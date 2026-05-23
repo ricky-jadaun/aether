@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-blue: #32599e;
+  --color-brand-green: #259350;
+  --color-brand-orange: #d76539;
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

@@ -30,7 +30,7 @@ const Testimonials = () => {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-[#259350]">Clients Say</span>
+            What Our <span className="text-brand-orange">Clients Say</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Don't just take our word for it. Hear from the leaders who have transformed their businesses with our technology.
@@ -43,13 +43,13 @@ const Testimonials = () => {
               key={index} 
               className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col relative group hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="absolute top-8 right-8 text-[#0062fe]/10 group-hover:text-[#0062fe]/20 transition-colors">
+              <div className="absolute top-8 right-8 text-brand-blue/10 group-hover:text-brand-blue/20 transition-colors">
                 <Quote size={60} />
               </div>
               
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-[#259350] text-[#259350]" />
+                  <Star key={i} size={18} className="fill-brand-green text-brand-green" />
                 ))}
               </div>
 
@@ -61,7 +61,7 @@ const Testimonials = () => {
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name} 
-                  className="w-14 h-14 rounded-full object-cover border-2 border-[#0062fe]/20"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/20"
                 />
                 <div>
                   <h4 className="font-bold text-gray-900">{testimonial.name}</h4>

@@ -82,16 +82,16 @@ const IndustriesSection = () => {
   };
 
   return (
-    <section className="bg-[#259350] py-20 md:py-28 flex flex-col items-center overflow-hidden">
+    <section className="bg-brand-blue py-20 md:py-28 flex flex-col items-center overflow-hidden">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           What Makes Us Your Trusted Partner
         </h2>
         <p className="text-white mx-auto max-w-lg tracking-wider mb-4">Choose us to leverage expertise and innovation for your business’s transformative journey towards success.</p>
         <div className="flex items-center justify-center gap-4">
-            <div className="h-[2px] w-20 bg-gray-200"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffffff]"></div>
-            <div className="h-[2px] w-20 bg-gray-200"></div>
+            <div className="h-[2px] w-20 bg-gray-200/30"></div>
+            <div className="w-3 h-3 rounded-full bg-white"></div>
+            <div className="h-[2px] w-20 bg-gray-200/30"></div>
         </div>
       </div>
 
@@ -137,8 +137,8 @@ const IndustriesSection = () => {
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-                    {/* The Green Box Overlay */}
-                    <div className="absolute inset-4 bg-[#259350]/90 flex flex-col items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    {/* The Theme Box Overlay */}
+                    <div className="absolute inset-4 bg-brand-blue/90 flex flex-col items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                       <h3 className="text-white font-bold text-2xl mb-4">{item.title}</h3>
                       <p className="text-white text-sm leading-relaxed">
                         {item.description}

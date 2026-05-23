@@ -10,7 +10,7 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="/assets/loading-vdo.mp4"
+          src="/assets/aether-rfid-one.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -29,7 +29,7 @@ const Hero = () => {
           At Aether-RFID, our mission is to deliver cost-effective, high-quality RFID and IoT solutions that solve modern business connectivity challenges through reliable services, innovation, and long-term partnerships.
         </p>
 
-        <button className="bg-[#259350] border-2 border-[#259350] text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-[#ffffff] hover:text-[#259350] hover:scale-105 transition-all duration-300">
+        <button className="bg-brand-orange border-2 border-brand-orange text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-[#ffffff] hover:text-brand-orange hover:scale-105 transition-all duration-300">
           Explore our products
         </button>
 

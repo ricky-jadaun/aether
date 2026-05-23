@@ -92,21 +92,21 @@ const Footer = () => {
             </div>
 
             <p className="font-semibold text-gray-800 mb-6 max-w-md">
-              AETHER RFID Technologies Limited
+              AETHER RFID Technologies Private Limited
             </p>
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-brand-green hover:text-white transition-all shadow-sm">
                 <LinkedInIcon size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-brand-green hover:text-white transition-all shadow-sm">
                 <TwitterIcon size={18} />
               </a>
-              {/* <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
+              {/* <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-brand-green hover:text-white transition-all shadow-sm">
                 <InstagramIcon size={18} />
               </a> */}
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#259350] hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-brand-green hover:text-white transition-all shadow-sm">
                 <YoutubeIcon size={18} />
               </a>
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
                   <li key={i}>
                     <a
                       href="#"
-                      className="text-gray-500 font-medium hover:text-[#259350] transition-colors duration-300"
+                      className="text-gray-500 font-medium hover:text-brand-green transition-colors duration-300"
                     >
                       {link}
                     </a>
@@ -155,7 +155,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {["Cookies", "Disclaimer", "Privacy Policies", "Site Map", "Terms"].map((item, i) => (
-              <a key={i} href="#" className="text-sm text-gray-500 hover:text-[#0062fe] transition-colors">
+              <a key={i} href="#" className="text-sm text-gray-500 hover:text-brand-blue transition-colors">
                 {item}
               </a>
             ))}

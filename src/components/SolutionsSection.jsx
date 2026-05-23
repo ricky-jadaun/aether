@@ -85,7 +85,7 @@ const SolutionsSection = () => {
   }, [isPaused]);
 
   return (
-    <section className="bg-[#32599e] py-16 md:py-24 overflow-hidden relative min-h-[600px] md:min-h-[800px] flex flex-col items-center justify-start">
+    <section className="bg-brand-blue py-16 md:py-24 overflow-hidden relative min-h-[600px] md:min-h-[800px] flex flex-col items-center justify-start">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-55">
@@ -155,7 +155,7 @@ const SolutionsSection = () => {
                   <div 
                     className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 border-2 
                       ${isActive 
-                        ? "bg-[#259350] border-white scale-125 shadow-lg shadow-[#259350]/50" 
+                        ? "bg-brand-green border-white scale-125 shadow-lg shadow-brand-green/50" 
                         : "bg-white/5 border-white/20 group-hover:bg-white/10 group-hover:scale-110"
                       }`}
                   >
@@ -169,7 +169,7 @@ const SolutionsSection = () => {
                   
                   {/* Decorative line connecting to center */}
                   {isActive && (
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#259350]/30 to-transparent transform"
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-brand-green/30 to-transparent transform"
                          style={{ transform: `rotate(${angle}deg)` }}></div>
                   )}
                 </div>
@@ -201,7 +201,7 @@ const SolutionsSection = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4">
-                        <div className="bg-[#259350] p-3 rounded-full text-white mb-2 shadow-lg">
+                        <div className="bg-brand-green p-3 rounded-full text-white mb-2 shadow-lg">
                             {item.icon}
                         </div>
                     </div>
@@ -220,10 +220,10 @@ const SolutionsSection = () => {
           </Swiper>
           
           <div className="flex justify-center gap-4 mt-4">
-             <button className="swiper-button-prev-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-[#259350] transition-colors">
+             <button className="swiper-button-prev-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-brand-green transition-colors">
                 <ChevronLeft size={20} />
              </button>
-             <button className="swiper-button-next-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-[#259350] transition-colors">
+             <button className="swiper-button-next-custom w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 hover:bg-brand-green transition-colors">
                 <ChevronRight size={20} />
              </button>
           </div>
