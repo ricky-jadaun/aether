@@ -44,7 +44,7 @@ const AboutUs = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#d76539]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#259350]">
                   <Target size={24} />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
               </div>
               
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#d76539]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#259350]">
                   <Award size={24} />
                 </div>
                 <div>
