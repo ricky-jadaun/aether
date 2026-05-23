@@ -13,11 +13,13 @@ const AllianceSection = () => {
     { name: "Chainway", logo: "/assets/alliance/chainway.png" },
     { name: "TVSE", logo: "/assets/alliance/tvse.png" },
     { name: "TVSE", logo: "/assets/alliance/startup-india.png" },
+    { name: "TVSE", logo: "/assets/alliance/rohs.png" },
     // Repeat for smooth carousel loop
     { name: "Avery Dennison", logo: "/assets/alliance/every-dennison.png" },
     { name: "Chainway", logo: "/assets/alliance/chainway.png" },
     { name: "TVSE", logo: "/assets/alliance/tvse.png" },
     { name: "TVSE", logo: "/assets/alliance/startup-india.png" },
+    { name: "TVSE", logo: "/assets/alliance/rohs.png" },
   ];
 
   const certifications = [
