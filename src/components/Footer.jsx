@@ -91,7 +91,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <p className="font-semibold text-gray-800 mb-6 max-w-md">
+            <p className="font-semibold text-gray-800 uppercase mb-6 max-w-md">
               AETHER RFID Technologies Private Limited
             </p>
 
