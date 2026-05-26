@@ -19,6 +19,8 @@ const AllianceSection = () => {
   ];
 
   const certifications = [
+    { name: "ISO 9001:2015", logo: "/assets/alliance/iso.png" },
+    { name: "ISO 9001:2015", logo: "/assets/alliance/ce.png" },
     { name: "ISO 9001:2015", logo: "/assets/alliance/rohs.png" },
     { name: "Startup India", logo: "/assets/alliance/startup-india.png" },
     { name: "ISO 9001:2015", logo: "/assets/alliance/rohs.png" },
@@ -40,9 +42,9 @@ const AllianceSection = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                 Strategic <span className="text-brand-blue">Alliances</span>
               </h2>
-              <h4 className="text-lg font-bold text-gray-800">
+              {/* <h4 className="text-lg font-bold text-gray-800">
                 Industry Leading Alliances
-              </h4>
+              </h4> */}
             </div>
             </div>
             
@@ -100,9 +102,9 @@ const AllianceSection = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                 Our <span className="text-brand-blue">Certification</span>
               </h2>
-              <h4 className="text-lg font-bold text-gray-800">
+              {/* <h4 className="text-lg font-bold text-gray-800">
                 ISO 9001:2015
-              </h4>
+              </h4> */}
               </div>
             </div>
 
