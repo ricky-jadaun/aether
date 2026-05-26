@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -8,7 +9,11 @@ const Header = () => {
   const navItems = [
     {
       name: "About Us",
-      dropdown: ["Our Company", "Team", "Careers"],
+      dropdown: [
+        { name: "Our Company", path: "/about/company-overview" },
+        { name: "Team", path: "/about/team" },
+        { name: "Careers", path: "/about/career" }
+      ],
     },
     {
       name: "Technologies",
@@ -32,14 +37,14 @@ const Header = () => {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer">
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
             {/* Logo Image */}
             <img
               src="/assets/Aether-rfid.png"
               alt="Logo"
               className="w-18 lg:w-24 h-auto object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-9">
@@ -64,22 +69,22 @@ const Header = () => {
                   }`}
                 >
                   {item.dropdown.map((drop, i) => (
-                    <a
+                    <Link
                       key={i}
-                      href="/"
+                      to={typeof drop === 'string' ? "/" : drop.path}
                       className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
                     >
-                      {drop}
-                    </a>
+                      {typeof drop === 'string' ? drop : drop.name}
+                    </Link>
                   ))}
                 </div>
               </div>
             ))}
 
             {/* Button */}
-            <button className="bg-brand-blue border-2 border-brand-blue text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-brand-blue hover:scale-105 transition duration-300">
+            <Link to="/contact" className="bg-brand-blue border-2 border-brand-blue text-white font-semibold px-7 py-3 rounded-full hover:bg-[#ffffff] hover:text-brand-blue hover:scale-105 transition duration-300">
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,22 +126,27 @@ const Header = () => {
                 >
                   <div className="flex flex-col gap-2 pl-3">
                     {item.dropdown.map((drop, i) => (
-                      <a
+                      <Link
                         key={i}
-                        href="/"
+                        to={typeof drop === 'string' ? "/" : drop.path}
                         className="text-gray-400 hover:text-brand-blue text-sm"
+                        onClick={() => setMobileMenu(false)}
                       >
-                        {drop}
-                      </a>
+                        {typeof drop === 'string' ? drop : drop.name}
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
             ))}
 
-            <button className="bg-brand-blue border-2 border-brand-blue text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-brand-blue lg:hover:scale-105 transition duration-300">
+            <Link 
+              to="/contact" 
+              className="bg-brand-blue border-2 border-brand-blue text-white font-semibold px-6 py-3 rounded-full mt-2 hover:bg-[#ffffff] hover:text-brand-blue lg:hover:scale-105 transition duration-300 text-center"
+              onClick={() => setMobileMenu(false)}
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </div>

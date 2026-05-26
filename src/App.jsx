@@ -1,32 +1,23 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import AchieveMore from "./components/AchieveMore";
-import ProductCatalog from "./components/ProductCatalog";
-import SolutionsSection from "./components/SolutionsSection";
-import AboutUs from "./components/AboutUs";
-import ClientsSection from "./components/ClientsSection";
-import IndustriesSection from "./components/IndustriesSection";
-import AllianceSection from "./components/AllianceSection";
-import Testimonials from "./components/Testimonials";
-import CounterSection from "./components/CounterSection";
-import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import CompanyOverview from "./pages/CompanyOverview";
+import Team from "./pages/Team";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <AchieveMore />
-      <ProductCatalog />
-      <SolutionsSection />
-      <AboutUs />
-      <ClientsSection />
-      <IndustriesSection />
-      <AllianceSection />
-      <Testimonials />
-      <CounterSection />
-      <CTASection />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about/company-overview" element={<CompanyOverview />} />
+        <Route path="/about/team" element={<Team />} />
+        <Route path="/about/career" element={<Careers />} />
+      </Routes>
       <Footer />
     </>
   );
