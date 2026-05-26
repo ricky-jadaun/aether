@@ -12,22 +12,17 @@ const AllianceSection = () => {
     { name: "Avery Dennison", logo: "/assets/alliance/every-dennison.png" },
     { name: "Chainway", logo: "/assets/alliance/chainway.png" },
     { name: "TVSE", logo: "/assets/alliance/tvse.png" },
-    { name: "TVSE", logo: "/assets/alliance/startup-india.png" },
-    { name: "TVSE", logo: "/assets/alliance/rohs.png" },
     // Repeat for smooth carousel loop
     { name: "Avery Dennison", logo: "/assets/alliance/every-dennison.png" },
     { name: "Chainway", logo: "/assets/alliance/chainway.png" },
     { name: "TVSE", logo: "/assets/alliance/tvse.png" },
-    { name: "TVSE", logo: "/assets/alliance/startup-india.png" },
-    { name: "TVSE", logo: "/assets/alliance/rohs.png" },
   ];
 
   const certifications = [
-    { 
-      name: "ISO 9001:2015", 
-      detail: "Quality Management System",
-      icon: <ShieldCheck className="text-brand-blue" size={40} />
-    }
+    { name: "ISO 9001:2015", logo: "/assets/alliance/rohs.png" },
+    { name: "Startup India", logo: "/assets/alliance/startup-india.png" },
+    { name: "ISO 9001:2015", logo: "/assets/alliance/rohs.png" },
+    { name: "Startup India", logo: "/assets/alliance/startup-india.png" },
   ];
 
   return (
@@ -41,9 +36,14 @@ const AllianceSection = () => {
               <div className="p-2 bg-brand-blue/10 rounded-lg text-brand-blue">
                 <Handshake size={24} />
               </div>
+              <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                 Strategic <span className="text-brand-blue">Alliances</span>
               </h2>
+              <h4 className="text-lg font-bold text-gray-800">
+                Industry Leading Alliances
+              </h4>
+            </div>
             </div>
             
             <div className="relative group/nav">
@@ -96,30 +96,41 @@ const AllianceSection = () => {
               <div className="p-2 bg-brand-green/10 rounded-lg text-brand-blue">
                 <Award size={24} />
               </div> 
+              <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                 Our <span className="text-brand-blue">Certification</span>
               </h2>
+              <h4 className="text-lg font-bold text-gray-800">
+                ISO 9001:2015
+              </h4>
+              </div>
             </div>
 
             <div className="h-42">
-              {certifications.map((cert, index) => (
-                <div 
-                  key={index}
-                  className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-brand-blue flex items-center gap-6 h-full transition-all duration-300 hover:shadow-lg"
-                >
-                  <div className="shrink-0">
-                    {cert.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">{cert.name}</h3>
-                    <p className="text-gray-500 text-sm mt-1">{cert.detail}</p>
-                    <div className="mt-4 inline-flex items-center text-brand-blue font-medium text-sm">
-                      <span className="w-8 h-px bg-brand-blue mr-2"></span>
-                      Verified Quality
+              <Swiper
+                direction="vertical"
+                modules={[Autoplay]}
+                spaceBetween={20}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                className="h-full"
+              >
+                {certifications.map((cert, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="group relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center h-full transition-all duration-300 hover:shadow-xl">
+                      <img 
+                        src={cert.logo} 
+                        alt={cert.name}
+                        className="h-24 w-auto object-contain"
+                      />
                     </div>
-                  </div>
-                </div>
-              ))}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
 
