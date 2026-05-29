@@ -52,10 +52,10 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
             <div className="flex items-center justify-center gap-4">
-            <div className="h-[2px] w-20 bg-gray-200"></div>
-            <div className="w-3 h-3 rounded-full bg-brand-green"></div>
-            <div className="h-[2px] w-20 bg-gray-200"></div>
-          </div>
+              <div className="h-[2px] w-20 bg-gray-200"></div>
+              <div className="w-3 h-3 rounded-full bg-brand-green"></div>
+              <div className="h-[2px] w-20 bg-gray-200"></div>
+            </div>
             {/* <p className="text-gray-600 text-lg">
               Have questions about our products or services? Fill out the form and our team will get back to you within 24 hours.
             </p> */}

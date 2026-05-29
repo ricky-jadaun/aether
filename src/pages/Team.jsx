@@ -61,7 +61,7 @@ const Team = () => {
       </section>
 
       {/* 2. Modern Team Grid */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24">
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Meet Our Experts</h2>

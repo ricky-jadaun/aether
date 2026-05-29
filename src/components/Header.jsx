@@ -17,7 +17,11 @@ const Header = () => {
     },
     {
       name: "Technologies",
-      dropdown: ["RFID", "IOT", "Barcodes"],
+      dropdown: [
+        { name: "RFID", path: "/technologies/rfid" },
+        { name: "IOT", path: "/technologies/iot" },
+        { name: "Barcodes", path: "/technologies/barcodes" }
+      ],
     },
     {
       name: "Products",
@@ -29,7 +33,11 @@ const Header = () => {
     },
     {
       name: "Blogs",
-      dropdown: ["Latest Blogs", "Case Studies", "Updates"],
+      dropdown: [
+        { name: "Latest Blogs", path: "/blogs" },
+        { name: "Case Studies", path: "/case-studies" },
+        { name: "Updates", path: "/blogs" }
+      ],
     },
   ];
   return (
