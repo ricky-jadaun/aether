@@ -207,21 +207,21 @@ const RFIDTechnology = () => {
 
                 <div className="lg:w-1/2 w-full grid grid-cols-2 gap-5">
                     <div className="space-y-5">
-                        <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
+                        <div className="bg-white/5 p-2 md:p-8 rounded-3xl border border-white/10 text-center">
                             <div className="text-4xl font-bold text-brand-orange mb-2">99.9%</div>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Read Accuracy</div>
                         </div>
-                        <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
+                        <div className="bg-white/5 p-2 md:p-8 rounded-3xl border border-white/10 text-center">
                             <div className="text-4xl font-bold text-brand-green mb-2">12Y+</div>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Industry Experience</div>
                         </div>
                     </div>
                     <div className="space-y-5 mt-10">
-                        <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
+                        <div className="bg-white/5 p-2 md:p-8 rounded-3xl border border-white/10 text-center">
                             <div className="text-4xl font-bold text-brand-blue mb-2">30%</div>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Cost Reduction</div>
                         </div>
-                        <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
+                        <div className="bg-white/5 p-2 md:p-8 rounded-3xl border border-white/10 text-center">
                             <div className="text-4xl font-bold text-white mb-2">500+</div>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Global Clients</div>
                         </div>
