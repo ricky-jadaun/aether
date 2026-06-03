@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Cpu, Zap, BarChart, Settings, ShieldCheck, Truck, ShoppingCart, Factory, CreditCard, UserCheck, Layers } from "lucide-react";
+import { Cpu, Zap, BarChart, Settings, ShieldCheck, Truck, ShoppingCart, Factory, CreditCard, Hospital, UserCheck, Layers } from "lucide-react";
 
 const RFIDTechnology = () => {
   const applications = [
@@ -14,9 +14,9 @@ const RFIDTechnology = () => {
       icon: <Factory size={32} />,
     },
     {
-      title: "Automated Toll Collection",
-      description: "High-speed vehicle identification systems for efficient, contactless toll management on highways.",
-      icon: <CreditCard size={32} />,
+      title: "Hospital facility management",
+      description: "RFID-powered tracking and monitoring of patients, staff, equipment, and assets for smarter, safer, and more efficient hospital operations.",
+      icon: <Hospital size={32} />,
     },
     {
       title: "Supply Chain Management",

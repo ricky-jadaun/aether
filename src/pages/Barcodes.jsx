@@ -176,10 +176,10 @@ const Barcodes = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-                { label: "Retail", icon: <ShoppingBag />, img: "/assets/solutions/affordability.jpg" },
-                { label: "Warehousing", icon: <Package />, img: "/assets/solutions/timely-deliver.jpg" },
-                { label: "Healthcare", icon: <ShieldCheck />, img: "/assets/solutions/InternationalStandardsCompliance.jpg" },
-                { label: "Manufacturing", icon: <Settings />, img: "/assets/solutions/state-of-art.jpg" }
+                { label: "Retail", icon: <ShoppingBag />, img: "/assets/solutions/retail-barcode.jpg" },
+                { label: "Warehousing", icon: <Package />, img: "/assets/solutions/warehouse-barcode.jpg" },
+                { label: "Healthcare", icon: <ShieldCheck />, img: "/assets/solutions/healthcare-barcode.jpg" },
+                { label: "Manufacturing", icon: <Settings />, img: "/assets/solutions/Manufacturing-barcade.jpg" }
             ].map((item, i) => (
                 <div key={i} className="group relative h-[400px] rounded-[40px] overflow-hidden shadow-xl">
                     <img src={item.img} alt={item.label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
