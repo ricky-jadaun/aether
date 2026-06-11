@@ -197,7 +197,7 @@ const IoTTechnology = () => {
         </div>
         
         <div className="max-w-[1200px] mx-auto px-5 relative z-10 flex flex-col items-center text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-8 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mb-8 leading-tight tracking-tight">
                 Backed by a Dedicated <br />
                 <span className="text-white">IoT Development Team</span>
             </h2>

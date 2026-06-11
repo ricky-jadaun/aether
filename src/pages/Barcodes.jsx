@@ -199,7 +199,7 @@ const Barcodes = () => {
       <section className="py-24 px-5">
          <div className="max-w-[1200px] mx-auto bg-gray-900 rounded-[60px] p-12 md:p-24 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blue/20 blur-[100px]"></div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 relative z-10">Complete Hardware <br /> & Software Support</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8 relative z-10">Complete Hardware <br /> & Software Support</h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-12 relative z-10 leading-relaxed">
                 From high-performance printers and scanners to custom label design software, we provide everything you need for a robust barcode environment.
             </p>
