@@ -37,7 +37,7 @@ const DataLoggers = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-white/5 to-transparent rounded-[40px] border border-white/10 p-8 flex items-center justify-center group overflow-hidden">
+              <div className="aspect-3/2 bg-gradient-to-br from-white/5 to-transparent rounded-[40px] border border-white/10 p-8 flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 bg-brand-orange/5 group-hover:scale-110 transition-transform duration-700"></div>
                 <HardDrive size={200} className="text-brand-orange/20 group-hover:text-brand-orange/40 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
