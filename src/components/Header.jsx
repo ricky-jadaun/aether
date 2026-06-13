@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [dropdown, setDropdown] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const navItems = [
     {
@@ -25,11 +26,37 @@ const Header = () => {
     },
     {
       name: "Products",
-      dropdown: ["RFID", "IOT", "Software Solution"],
+      dropdown: [
+        { 
+          name: "RFID", 
+          submenu: [
+            { name: "Hardware", path: "/products/rfid/hardware" },
+            { name: "Tags", path: "/products/rfid/tags" }
+          ]
+        },
+        { 
+          name: "IOT", 
+          submenu: [
+            { name: "Data Loggers", path: "/products/iot/data-loggers" },
+            { name: "GPS/GNSS Devices", path: "/products/iot/gps-gnss" },
+            { name: "LoRaWAN/Other Sensor Devices", path: "/products/iot/lorawan-sensors" }
+          ]
+        },
+        { 
+          name: "Software Solution", 
+          submenu: [
+            { name: "Retail Automation", path: "/products/software/retail-automation" },
+            { name: "Assets Tracking", path: "/products/software/assets-tracking" },
+            { name: "Warehouse Management", path: "/products/software/warehouse-management" },
+            { name: "Facility Management", path: "/products/software/facility-management" },
+            { name: "Factory Automation", path: "/products/software/factory-automation" }
+          ]
+        }
+      ],
     },
     {
       name: "Industry",
-      dropdown: ["Retail", "Factory Automation", "Logistics", "E-commerce", "Quick Commerce"],
+      dropdown: ["Retail", "Factory Automation", "Logistics", "E-commerce/Quick Commerce"],
     },
     {
       name: "Blogs",
@@ -61,7 +88,10 @@ const Header = () => {
                 key={index}
                 className="relative group"
                 onMouseEnter={() => setDropdown(index)}
-                onMouseLeave={() => setDropdown(null)}
+                onMouseLeave={() => {
+                  setDropdown(null);
+                  setActiveSubmenu(null);
+                }}
               >
                 <button className="flex items-center gap-1 text-[16px] font-medium hover:text-brand-blue transition duration-300">
                   {item.name}
@@ -70,20 +100,47 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <div
-                  className={`absolute top-[45px] left-0 w-[220px] bg-brand-blue border border-white/10 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
+                  className={`absolute top-[45px] left-0 w-[220px] bg-brand-blue border border-white/10 rounded-xl shadow-2xl transition-all duration-300 z-50 ${
                     dropdown === index
                       ? "opacity-100 visible translate-y-0"
                       : "opacity-0 invisible translate-y-3"
                   }`}
                 >
                   {item.dropdown.map((drop, i) => (
-                    <Link
-                      key={i}
-                      to={typeof drop === 'string' ? "/" : drop.path}
-                      className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
-                    >
-                      {typeof drop === 'string' ? drop : drop.name}
-                    </Link>
+                    <div key={i} className="relative group/sub">
+                      {typeof drop === 'string' ? (
+                        <Link
+                          to="/"
+                          className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
+                        >
+                          {drop}
+                        </Link>
+                      ) : drop.submenu ? (
+                        <div className="flex items-center justify-between px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition cursor-pointer">
+                          <span>{drop.name}</span>
+                          <ChevronRight size={14} />
+                          {/* Submenu */}
+                          <div className="absolute left-full top-0 w-[200px] bg-brand-blue border border-white/10 rounded-xl shadow-2xl overflow-hidden hidden group-hover/sub:block transition-all duration-300">
+                            {drop.submenu.map((sub, j) => (
+                              <Link
+                                key={j}
+                                to={sub.path}
+                                className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
+                              >
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          to={drop.path}
+                          className="block px-5 py-3 text-sm text-gray-300 hover:bg-[#1b1b1b] hover:text-[#ffffff] transition"
+                        >
+                          {drop.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -115,7 +172,10 @@ const Header = () => {
               <div key={index} className="border-b border-white/10 pb-3">
                 <button
                   className="flex items-center justify-between w-full text-left text-[14px] font-medium"
-                  onClick={() => setDropdown(dropdown === index ? null : index)}
+                  onClick={() => {
+                    setDropdown(dropdown === index ? null : index);
+                    setActiveSubmenu(null);
+                  }}
                 >
                   {item.name}
 
@@ -129,19 +189,61 @@ const Header = () => {
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    dropdown === index ? "max-h-60 mt-3" : "max-h-0"
+                    dropdown === index ? "max-h-[500px] mt-3" : "max-h-0"
                   }`}
                 >
                   <div className="flex flex-col gap-2 pl-3">
                     {item.dropdown.map((drop, i) => (
-                      <Link
-                        key={i}
-                        to={typeof drop === 'string' ? "/" : drop.path}
-                        className="text-gray-400 hover:text-brand-blue text-sm"
-                        onClick={() => setMobileMenu(false)}
-                      >
-                        {typeof drop === 'string' ? drop : drop.name}
-                      </Link>
+                      <div key={i}>
+                        {typeof drop === 'string' ? (
+                          <Link
+                            to="/"
+                            className="text-gray-400 hover:text-brand-blue text-sm block py-1"
+                            onClick={() => setMobileMenu(false)}
+                          >
+                            {drop}
+                          </Link>
+                        ) : drop.submenu ? (
+                          <div className="flex flex-col gap-2">
+                            <button
+                              className="flex items-center justify-between w-full text-gray-400 hover:text-brand-blue text-sm py-1"
+                              onClick={() => setActiveSubmenu(activeSubmenu === i ? null : i)}
+                            >
+                              {drop.name}
+                              <ChevronDown
+                                size={14}
+                                className={`transition-transform duration-300 ${
+                                  activeSubmenu === i ? "rotate-180" : ""
+                                }`}
+                              />
+                            </button>
+                            <div
+                              className={`overflow-hidden transition-all duration-300 pl-4 flex flex-col gap-2 ${
+                                activeSubmenu === i ? "max-h-40" : "max-h-0"
+                              }`}
+                            >
+                              {drop.submenu.map((sub, j) => (
+                                <Link
+                                  key={j}
+                                  to={sub.path}
+                                  className="text-gray-500 hover:text-brand-blue text-sm block py-1"
+                                  onClick={() => setMobileMenu(false)}
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <Link
+                            to={drop.path}
+                            className="text-gray-400 hover:text-brand-blue text-sm block py-1"
+                            onClick={() => setMobileMenu(false)}
+                          >
+                            {drop.name}
+                          </Link>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>

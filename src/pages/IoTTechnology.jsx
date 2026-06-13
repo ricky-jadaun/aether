@@ -204,9 +204,9 @@ const IoTTechnology = () => {
             <p className="text-[#0a0a0a] text-xl max-w-3xl mb-12 opacity-80 leading-relaxed">
                 We proudly deliver innovative solutions that empower businesses to achieve smarter, connected growth. Our team bridges the gap between hardware and intelligence.
             </p>
-            <button className="bg-[#0a0a0a] text-white font-bold px-12 py-5 rounded-full hover:scale-105 transition-all shadow-2xl">
+            <Link to="/contact" className="bg-[#0a0a0a] text-white font-bold px-12 py-5 rounded-full hover:scale-105 transition-all shadow-2xl">
                 Consult with our Team
-            </button>
+            </Link>
         </div>
       </section>
 

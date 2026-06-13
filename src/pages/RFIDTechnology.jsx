@@ -83,7 +83,7 @@ const RFIDTechnology = () => {
             </p>
             <div className="flex flex-wrap gap-5">
               <button className="bg-brand-orange text-white font-bold px-10 py-4 rounded-full hover:scale-105 transition-all ">
-                Explore Hardware
+                Explore Products
               </button>
               <Link to="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-all">
                 Contact Experts
@@ -222,7 +222,7 @@ const RFIDTechnology = () => {
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Cost Reduction</div>
                         </div>
                         <div className="bg-white/5 p-2 md:p-8 rounded-3xl border border-white/10 text-center">
-                            <div className="text-4xl font-bold text-white mb-2">500+</div>
+                            <div className="text-4xl font-bold text-white mb-2">100+</div>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Global Clients</div>
                         </div>
                     </div>
