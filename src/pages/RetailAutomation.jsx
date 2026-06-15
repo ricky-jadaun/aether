@@ -47,27 +47,27 @@ const RetailAutomation = () => {
             </div>
 
             <div className="relative">
-              <div className="relative z-10 bg-white backdrop-blur-2xl border border-white/10 p-12 rounded-[60px] shadow-2xl overflow-hidden group">
+              <div className="relative z-10 bg-white backdrop-blur-2xl border border-white/10 p-8 rounded-[60px] shadow-2xl overflow-hidden group">
                 {/* <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div> */}
                 <div className="absolute inset-0 bg-brand-orange/5 blur-[100px] rounded-full"></div>
-                <div className="grid grid-cols-2 gap-8 relative z-10">
+                <div className="relative z-10">
                   <div className="space-y-8">
-                    <div className="aspect-square rounded-3xl flex items-center justify-center shadow-2xl  rotate-3 group-hover:rotate-0 transition-transform">
+                    <div className="rounded-3xl flex items-center justify-center shadow-2xl">
                       <img
-                        src="/assets/gps-device.jpg"
+                        src="/assets/retail-hero-item.jpg"
                         alt="GPS Device"
                         className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
                       />
                       {/* <MapPin size={48} /> */}
                     </div>
-                    <div className="p-6 bg-white/5 rounded-3xl border border-orange-500 shadow-lg text-center">
+                    {/* <div className="p-6 bg-white/5 rounded-3xl border border-orange-500 shadow-lg text-center">
                       <div className="text-3xl font-bold">35%</div>
                       <div className="text-[10px] text-gray-500 uppercase font-black">
                         Inventory Accuracy
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div className="space-y-8 mt-12">
+                  {/* <div className="space-y-8 mt-12">
                     <div className="p-6 bg-white/5 rounded-3xl border border-orange-500 shadow-lg text-center">
                       <div className="text-3xl font-bold text-blue-500">0s</div>
                       <div className="text-[10px] text-gray-500 uppercase font-black">
@@ -81,7 +81,7 @@ const RetailAutomation = () => {
                         className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

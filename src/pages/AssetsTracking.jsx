@@ -5,30 +5,110 @@ const AssetsTracking = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Search-Inspired Hero */}
-      <section className="relative py-12 bg-brand-blue text-white overflow-hidden">
+      <section className="relative py-20 bg-brand-blue text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12"></div>
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/20 border border-brand-orange/30 rounded-lg text-brand-orange font-bold text-sm uppercase mb-8">
-              <Search size={18} /> 100% Asset Visibility
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/20 border border-brand-orange/30 rounded-lg text-brand-orange font-bold text-sm uppercase mb-8">
+                <Search size={18} /> 100% Asset Visibility
+              </div>
+              <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[0.9]">
+                TRACK EVERYTHING. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">LOSE NOTHING.</span>
+              </h1>
+              <p className="text-xl text-blue-100/70 mb-12 max-w-2xl font-light">
+                 Our Asset Tracking engine provides a single source of truth for your physical inventory, from high-value equipment to mission-critical tools.
+              </p>
+              <div className="flex flex-wrap gap-6">
+                  <Link to="/contact" className="px-12 py-5 bg-brand-orange text-white font-black rounded-full hover:scale-105 transition-transform shadow-2xl shadow-brand-orange/20">
+                      Deploy Tracker
+                  </Link>
+                  <button className="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all">
+                      View Demo
+                  </button>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[0.9]">
-              TRACK EVERYTHING. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">LOSE NOTHING.</span>
-            </h1>
-            <p className="text-xl text-blue-100/70 mb-12 max-w-2xl font-light">
-               Our Asset Tracking engine provides a single source of truth for your physical inventory, from high-value equipment to mission-critical tools.
-            </p>
-            <div className="flex flex-wrap gap-6">
-                <Link to="/contact" className="px-12 py-5 bg-brand-orange text-white font-black rounded-full hover:scale-105 transition-transform shadow-2xl shadow-brand-orange/20">
-                    Deploy Tracker
-                </Link>
-                <button className="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all">
-                    View Demo
-                </button>
+
+            {/* Tracking Animation Image */}
+            <div className="relative group">
+              <div className="relative z-10 rounded-[2rem] overflow-hidden border-8 border-white/10 shadow-2xl">
+                <img 
+                  src="/assets/blogs/Asset-Tracking-Solutions-for-Logistics.jpg" 
+                  alt="Asset Tracking" 
+                  className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                />
+                
+                {/* Tracking Overlay */}
+                <div className="absolute inset-0 bg-brand-blue/20"></div>
+                
+                {/* Scanner Line Animation */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-brand-orange shadow-[0_0_20px_#d76539] animate-scanner-line z-20"></div>
+
+                {/* Tracking Points */}
+                <div className="absolute top-[27%] left-[10%] z-30">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-brand-orange/30 rounded-full animate-ping"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_10px_#d76539]"></div>
+                  </div>
+                </div>
+
+                <div className="absolute top-[46%] left-[20%] z-30">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-brand-orange/30 rounded-full animate-ping [animation-delay:1s]"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_10px_#d76539]"></div>
+                  </div>
+                </div>
+
+                <div className="absolute top-[24%] left-[42%] z-30">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-brand-orange/30 rounded-full animate-ping [animation-delay:2s]"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_10px_#d76539]"></div>
+                  </div>
+                </div>
+
+                {/* UI Elements Overlay */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 z-30">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-brand-orange rounded-lg flex items-center justify-center">
+                        <Truck size={20} className="text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-white/60 uppercase font-bold tracking-widest">Asset ID: AT-9942</p>
+                        <p className="text-sm font-bold">In Transit - Route A-4</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[10px] text-white/60 uppercase font-bold tracking-widest">Status</p>
+                      <p className="text-sm font-bold text-green-400 flex items-center gap-1">
+                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Active
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative elements behind image */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-orange/20 blur-[100px] rounded-full -z-10"></div>
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-brand-blue/40 blur-[100px] rounded-full -z-10"></div>
             </div>
           </div>
         </div>
+
+        <style>
+          {`
+            @keyframes scanner {
+              0% { top: 0%; opacity: 0; }
+              10% { opacity: 1; }
+              90% { opacity: 1; }
+              100% { top: 100%; opacity: 0; }
+            }
+            .animate-scanner-line {
+              animation: scanner 4s linear infinite;
+            }
+          `}
+        </style>
       </section>
 
       {/* Metrics Section */}
