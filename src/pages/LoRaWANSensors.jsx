@@ -15,8 +15,8 @@ const LoRaWANSensors = () => {
             <div className="inline-block px-4 py-2 bg-brand-green/10 border border-brand-green/20 rounded-full text-brand-green text-sm font-bold tracking-widest uppercase mb-8">
                LPWAN Connectivity Experts
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter leading-none">
-              LORA<span className="text-brand-green">WAN</span> <br />
+            <h1 className="text-4xl md:text-6xl font-black mb-10 tracking-[1.2] leading-none">
+              LORA<span className="text-brand-green">WAN</span> <br/>  
               <span className="text-4xl md:text-7xl block mt-4 font-light text-gray-400">& Wireless Sensors</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
@@ -34,32 +34,32 @@ const LoRaWANSensors = () => {
       </section>
 
       {/* Sensor Cards Section */}
-      <section className="py-32 max-w-[1400px] mx-auto px-5 lg:px-10">
+      <section className="py-32 bg-[#ffffff] max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12">
             {[
                 { 
                     title: "LoRaWAN Gateway", 
                     desc: "The heart of your network. Support for 1000+ nodes with a line-of-sight range of up to 15km.", 
-                    icon: <Signal className="text-brand-green" size={40} />,
+                    icon: <Signal className="text-brand-blue" size={40} />,
                     specs: ["Industrial Outdoor/Indoor", "PoE Support", "4G Backhaul"]
                 },
                 { 
                     title: "Smart Sensors", 
                     desc: "From temperature and humidity to CO2 and vibration. Ultra-low power nodes that last 10+ years on a single battery.", 
-                    icon: <Wifi className="text-brand-green" size={40} />,
+                    icon: <Wifi className="text-brand-blue" size={40} />,
                     specs: ["IP67 Ruggedized", "Instant Wake-up", "OTA Updates"]
                 }
             ].map((item, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 p-12 rounded-[60px] hover:border-brand-green/40 transition-colors group">
-                    <div className="mb-8 p-6 bg-white/5 rounded-[32px] w-fit group-hover:bg-brand-green/10 transition-colors">
+                <div key={i} className="bg-white/5 border border-white/10 p-12 rounded-[60px] hover:border-brand-blue/40 transition-colors group">
+                    <div className="mb-8 p-6 bg-white/5 rounded-[32px] w-fit group-hover:bg-brand-blue/10 transition-colors">
                         {item.icon}
                     </div>
-                    <h3 className="text-4xl font-bold mb-6">{item.title}</h3>
-                    <p className="text-gray-400 text-lg mb-8 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-4xl text-brand-blue font-bold mb-6">{item.title}</h3>
+                    <p className="text-gray-900 text-lg mb-8 leading-relaxed">{item.desc}</p>
                     <ul className="space-y-4">
                         {item.specs.map((s, j) => (
-                            <li key={j} className="flex items-center gap-3 text-sm font-bold text-gray-300">
-                                <div className="w-2 h-2 rounded-full bg-brand-green"></div>
+                            <li key={j} className="flex items-center gap-3 text-sm font-bold text-gray-600">
+                                <div className="w-2 h-2 rounded-full bg-brand-blue"></div>
                                 {s}
                             </li>
                         ))}

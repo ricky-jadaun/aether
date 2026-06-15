@@ -31,16 +31,21 @@ const DataLoggers = () => {
                 <Link to="/contact" className="px-8 py-4 bg-brand-orange text-black font-black uppercase italic hover:scale-105 transition-transform">
                   Inquire Now
                 </Link>
-                <button className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors">
+                <Link to="/contact" className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-colors">
                   Technical Specs
-                </button>
+                </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative overflow-hidden rounded-[40px]">
               <div className="aspect-3/2 bg-gradient-to-br from-white/5 to-transparent rounded-[40px] border border-white/10 p-8 flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 bg-brand-orange/5 group-hover:scale-110 transition-transform duration-700"></div>
-                <HardDrive size={200} className="text-brand-orange/20 group-hover:text-brand-orange/40 transition-colors duration-500" />
+                {/* <HardDrive size={200} className="text-brand-orange/20 group-hover:text-brand-orange/40 transition-colors duration-500" /> */}
                 <div className="absolute inset-0 flex items-center justify-center">
+                  <img 
+                src="/assets/data-logger.jpg" 
+                alt="Data Logger" 
+                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
+              />
                    <div className="w-32 h-32 bg-brand-orange blur-[60px] opacity-20 animate-pulse"></div>
                 </div>
               </div>

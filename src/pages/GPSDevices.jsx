@@ -37,8 +37,13 @@ const GPSDevices = () => {
                <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
                <div className="grid grid-cols-2 gap-8 relative z-10">
                   <div className="space-y-8">
-                    <div className="aspect-square bg-blue-500 rounded-3xl flex items-center justify-center text-white rotate-3 group-hover:rotate-0 transition-transform">
-                        <MapPin size={48} />
+                    <div className="aspect-square rounded-3xl flex items-center justify-center text-white rotate-3 group-hover:rotate-0 transition-transform">
+                      <img 
+                src="/assets/gps-device.jpg" 
+                alt="GPS Device" 
+                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
+              />
+                        {/* <MapPin size={48} /> */}
                     </div>
                     <div className="p-6 bg-white/5 rounded-3xl border border-white/10 text-center">
                         <div className="text-3xl font-bold">1.5m</div>
@@ -50,8 +55,12 @@ const GPSDevices = () => {
                         <div className="text-3xl font-bold text-blue-500">4G</div>
                         <div className="text-[10px] text-gray-500 uppercase font-black">Fast Connectivity</div>
                     </div>
-                    <div className="aspect-square bg-white rounded-3xl flex items-center justify-center text-blue-600 -rotate-6 group-hover:rotate-0 transition-transform">
-                        <Navigation size={48} />
+                    <div className="aspect-square rounded-3xl flex items-center justify-center text-blue-600 -rotate-6 group-hover:rotate-0 transition-transform">
+                        <img 
+                src="/assets/gnss-device.jpg" 
+                alt="GNSS Device" 
+                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
+              />
                     </div>
                   </div>
                </div>

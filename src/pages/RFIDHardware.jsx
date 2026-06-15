@@ -61,12 +61,12 @@ const RFIDHardware = () => {
           </div>
 
           <div className="relative">
-            <div className="relative z-20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/20 p-8 rounded-[48px] shadow-2xl overflow-hidden group">
+            <div className="relative z-20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/20 p-4 rounded-[48px] shadow-2xl overflow-hidden group">
               <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors"></div>
               <img 
-                src="/assets/Aether-rfid.png" 
+                src="/assets/rfid-hardware.jpg" 
                 alt="RFID Hardware" 
-                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-700"
+                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
               />
               
               {/* Floating feature tags */}

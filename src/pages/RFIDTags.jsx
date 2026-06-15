@@ -30,8 +30,8 @@ const RFIDTags = () => {
       {/* Hero Section */}
       <section className="relative py-24 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div className="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
-          <div className="max-w-3xl">
+        <div className="max-w-[1400px] mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Specialized <span className="text-brand-orange">RFID Tags</span> <br />
               for Every Environment
@@ -40,24 +40,41 @@ const RFIDTags = () => {
               From high-security access control to long-range industrial asset tracking, our tags are engineered for 99.9% read accuracy.
             </p>
             <div className="flex flex-wrap gap-4">
-               <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-sm">
-                  <ShieldCheck size={16} className="text-brand-green" />
+               <div className="flex items-center gap-2 px-8 py-4 bg-white/5 border font-bold border-white/10 rounded-2xl text-white text-sm">
+                  <ShieldCheck size={20} className="text-brand-green" />
                   ISO Certified
                </div>
-               <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-sm">
-                  <Zap size={16} className="text-brand-orange" />
+               <div className="flex items-center gap-2 px-8 py-4 bg-white/5 border font-bold border-white/10 rounded-2xl text-white text-sm">
+                  <Zap size={20} className="text-brand-orange" />
                   High Performance
                </div>
             </div>
           </div>
+
+          {/*  */}
+          <div className="relative">
+            <div className="relative z-20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/20 p-4 rounded-[48px] shadow-2xl overflow-hidden group">
+              <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors"></div>
+              <img 
+                src="/assets/rfid-tag.jpg" 
+                alt="RFID Hardware" 
+                className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            
+            {/* Decorative rings */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 border border-white/5 rounded-full"></div>
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 border border-white/5 rounded-full"></div>
+          </div>
+          {/*  */}
         </div>
       </section>
 
       {/* Categories Section */}
       <section className="py-24 max-w-[1400px] mx-auto px-5 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Frequency Categories</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">Choose the right frequency based on your read range and security requirements.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Frequency Categories</h2>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">Choose the right frequency based on your read range and security requirements.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
