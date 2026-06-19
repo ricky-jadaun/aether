@@ -1,8 +1,11 @@
 import { Calendar, User, ArrowRight, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useContent } from "../context/ContentContext";
 
 const Blogs = () => {
-  const blogs = [
+  const { blogs: dbBlogs } = useContent();
+
+  const fallbackBlogs = [
     {
       id: 1,
       title: "The Future of RFID in Retail Supply Chains",
@@ -59,6 +62,7 @@ const Blogs = () => {
     },
   ];
 
+  const blogs = dbBlogs && dbBlogs.length > 0 ? dbBlogs : fallbackBlogs;
   const featuredBlog = blogs[0];
 
   return (
@@ -82,51 +86,53 @@ const Blogs = () => {
       </section>
 
       {/* Featured Blog Section */}
-      <section className="py-20 max-w-[1400px] mx-auto px-5 lg:px-10">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="h-[2px] w-12 bg-brand-green"></div>
-          <h2 className="text-3xl font-bold text-brand-green tracking-tight">Featured Story</h2>
-        </div>
+      {featuredBlog && (
+        <section className="py-20 max-w-[1400px] mx-auto px-5 lg:px-10">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-[2px] w-12 bg-brand-green"></div>
+            <h2 className="text-3xl font-bold text-brand-green tracking-tight">Featured Story</h2>
+          </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-50 border border-gray-100 flex flex-col lg:flex-row gap-0 lg:gap-10 hover:shadow-2xl transition-all duration-500">
-          <div className="lg:w-1/2 overflow-hidden h-[300px] lg:h-[450px]">
-            <img 
-              src={featuredBlog.image} 
-              alt={featuredBlog.title} 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                <Tag size={12} /> {featuredBlog.category}
-              </span>
-              <span className="text-gray-400 text-sm flex items-center gap-2">
-                <Calendar size={14} /> {featuredBlog.date}
-              </span>
+          <div className="group relative overflow-hidden rounded-3xl bg-gray-50 border border-gray-100 flex flex-col lg:flex-row gap-0 lg:gap-10 hover:shadow-2xl transition-all duration-500">
+            <div className="lg:w-1/2 overflow-hidden h-[300px] lg:h-[450px]">
+              <img 
+                src={featuredBlog.image} 
+                alt={featuredBlog.title} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
             </div>
-            <Link to={`/blog/${featuredBlog.id}`}>
-              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 group-hover:text-brand-blue transition-colors leading-tight">
-                {featuredBlog.title}
-              </h3>
-            </Link>
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              {featuredBlog.excerpt}
-            </p>
-            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-200/60">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue font-bold">
-                  {featuredBlog.author.charAt(0)}
-                </div>
-                <span className="text-gray-700 font-semibold">{featuredBlog.author}</span>
+            <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                  <Tag size={12} /> {featuredBlog.category}
+                </span>
+                <span className="text-gray-400 text-sm flex items-center gap-2">
+                  <Calendar size={14} /> {featuredBlog.date}
+                </span>
               </div>
-              <Link to={`/blog/${featuredBlog.id}`} className="flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all group/btn">
-                Read Full Story <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+              <Link to={`/blog/${featuredBlog._id || featuredBlog.id}`}>
+                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 group-hover:text-brand-blue transition-colors leading-tight">
+                  {featuredBlog.title}
+                </h3>
               </Link>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                {featuredBlog.excerpt}
+              </p>
+              <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-200/60">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue font-bold">
+                    {featuredBlog.author ? featuredBlog.author.charAt(0) : "A"}
+                  </div>
+                  <span className="text-gray-700 font-semibold">{featuredBlog.author}</span>
+                </div>
+                <Link to={`/blog/${featuredBlog._id || featuredBlog.id}`} className="flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all group/btn">
+                  Read Full Story <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Blog Grid Section */}
       <section className="py-20 bg-gray-50/50">
@@ -134,36 +140,20 @@ const Blogs = () => {
           <div className="flex justify-center mb-16 gap-6">
             <div>
               <div className="flex justify-center items-center gap-4 mb-4">
-                {/* <div className="h-[2px] w-12 bg-brand-blue"></div> */}
                 <span className="text-brand-blue font-bold uppercase tracking-widest text-sm">Our Articles</span>
-                {/* <div className="h-[2px] w-12 bg-brand-blue"></div> */}
               </div>
               <h2 className="text-4xl font-bold text-gray-900 tracking-tight mb-4">Browse All Updates</h2>
               <div className="flex items-center justify-center gap-4">
-              <div className="h-[2px] w-20 bg-gray-200"></div>
-              <div className="w-3 h-3 rounded-full bg-brand-green"></div>
-              <div className="h-[2px] w-20 bg-gray-200"></div>
+                <div className="h-[2px] w-20 bg-gray-200"></div>
+                <div className="w-3 h-3 rounded-full bg-brand-green"></div>
+                <div className="h-[2px] w-20 bg-gray-200"></div>
+              </div>
             </div>
-            </div>
-            
-            {/* Simple Category Filter Placeholder */}
-            {/* <div className="flex flex-wrap gap-3">
-              {["All", "Retail", "Logistics", "IoT", "Security"].map((cat) => (
-                <button 
-                  key={cat} 
-                  className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                    cat === "All" ? "bg-brand-blue text-white shadow-lg shadow-brand-blue/25" : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {blogs.slice(1).map((blog) => (
-              <div key={blog.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+              <div key={blog._id || blog.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={blog.image} 
@@ -183,7 +173,7 @@ const Blogs = () => {
                     <span className="flex items-center gap-1.5"><User size={12} /> {blog.author}</span>
                   </div>
                   
-                  <Link to={`/blog/${blog.id}`}>
+                  <Link to={`/blog/${blog._id || blog.id}`}>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-brand-blue transition-colors leading-snug">
                       {blog.title}
                     </h3>
@@ -194,7 +184,7 @@ const Blogs = () => {
                   </p>
                   
                   <div className="mt-auto pt-6 border-t border-gray-50">
-                    <Link to={`/blog/${blog.id}`} className="flex items-center gap-2 text-brand-blue font-bold text-sm hover:gap-3 transition-all">
+                    <Link to={`/blog/${blog._id || blog.id}`} className="flex items-center gap-2 text-brand-blue font-bold text-sm hover:gap-3 transition-all">
                       Read More <ArrowRight size={16} />
                     </Link>
                   </div>
@@ -202,12 +192,6 @@ const Blogs = () => {
               </div>
             ))}
           </div>
-
-          {/* <div className="mt-20 text-center">
-            <button className="bg-white border-2 border-brand-blue text-brand-blue font-bold px-10 py-4 rounded-full hover:bg-brand-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-blue/20">
-              Load More Articles
-            </button>
-          </div> */}
         </div>
       </section>
 
@@ -229,7 +213,7 @@ const Blogs = () => {
             </div>
             
             <div className="w-full max-w-md">
-              <form className="relative group">
+              <form className="relative group" onSubmit={(e) => e.preventDefault()}>
                 <input 
                   type="email" 
                   placeholder="Enter your email address" 
@@ -251,3 +235,4 @@ const Blogs = () => {
 };
 
 export default Blogs;
+

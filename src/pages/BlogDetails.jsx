@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Calendar, User, Tag, ArrowLeft, Share2, MessageSquare } from "lucide-react";
 import { useEffect } from "react";
+import { useContent } from "../context/ContentContext";
 
 const Facebook = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -24,30 +25,26 @@ const Linkedin = ({ size = 20 }) => (
 
 const BlogDetails = () => {
   const { id } = useParams();
+  const { blogs: dbBlogs } = useContent();
 
   // Scroll to top on load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  // Mock data - In a real app, this would be fetched from an API using the id
-  const blogs = [
+  const fallbackBlogs = [
     {
       id: 1,
       title: "The Future of RFID in Retail Supply Chains",
       content: `
         <p>RFID technology has moved far beyond a simple replacement for barcodes. In today's hyper-connected retail environment, it serves as the backbone of a truly omnichannel strategy. By providing real-time visibility into inventory levels, retailers can now promise—and deliver—absolute accuracy to their customers.</p>
-        
         <h3>The Shift Toward Real-Time Intelligence</h3>
         <p>Gone are the days when inventory counts were performed once a quarter or once a year. Modern RFID solutions allow for continuous cycle counting. This means a retail store knows exactly what is on the shelf, in the backroom, and in transit at all times. This level of precision reduces out-of-stock situations by up to 80%.</p>
-        
         <blockquote>
           "RFID is no longer just about tracking; it's about the data-driven insights that allow businesses to respond to consumer behavior instantly."
         </blockquote>
-
         <h3>Enhancing Customer Experience</h3>
         <p>Beyond the warehouse, RFID is transforming the shopping floor. Smart fitting rooms can suggest complementary items to customers based on what they've brought in to try on. Contactless checkout systems are becoming faster and more reliable, reducing wait times and improving overall satisfaction.</p>
-        
         <p>As we look toward the next decade, the integration of RFID with AI and machine learning will further optimize supply chains, making them more resilient to global disruptions.</p>
       `,
       image: "/assets/blogs/close-up-scanning-box.jpg",
@@ -56,25 +53,35 @@ const BlogDetails = () => {
       category: "Retail",
       tags: ["RFID", "Retail Tech", "Supply Chain", "Innovation"]
     },
-    // Adding a few more for the "Related Posts" section
     {
-        id: 2,
-        title: "IoT and Smart Manufacturing: A New Era",
-        image: "/assets/InnovativeStrategies.png",
-        date: "May 20, 2026",
-        category: "Manufacturing",
+      id: 2,
+      title: "IoT and Smart Manufacturing: A New Era",
+      image: "/assets/blogs/iot-smart-manufacturing.jpg",
+      date: "May 20, 2026",
+      author: "Priya Verma",
+      category: "Manufacturing",
+      content: "<p>Smart manufacturing, driven by the Internet of Things (IoT), is redefining the industrial landscape. By embedding sensors, actuators, and smart controllers into factory machines, manufacturers can gather real-time telemetry on operations.</p>"
     },
     {
-        id: 3,
-        title: "Asset Tracking Solutions for Logistics",
-        image: "/assets/ReliableSupport.avif",
-        date: "May 15, 2026",
-        category: "Logistics",
+      id: 3,
+      title: "Asset Tracking Solutions for Logistics",
+      image: "/assets/blogs/Asset-Tracking-Solutions-for-Logistics.jpg",
+      date: "May 15, 2026",
+      author: "Rahul Singh",
+      category: "Logistics",
+      content: "<p>Logistics companies are facing unprecedented demands for speed, transparency, and reliability. Real-time asset tracking using GPS, cellular, and LoRaWAN connectivity is providing the solution.</p>"
     }
   ];
 
-  const blog = blogs.find(b => b.id === parseInt(id)) || blogs[0];
-  const relatedPosts = blogs.filter(b => b.id !== blog.id).slice(0, 3);
+  const blogs = dbBlogs && dbBlogs.length > 0 ? dbBlogs : fallbackBlogs;
+  
+  // Find blog by DB ObjectId or mock numerical ID
+  const blog = blogs.find(b => b._id === id || String(b.id) === id) || blogs[0];
+  const relatedPosts = blogs.filter(b => (b._id || b.id) !== (blog._id || blog.id)).slice(0, 3);
+
+  if (!blog) {
+    return <div className="text-center py-20">Loading blog post...</div>;
+  }
 
   return (
     <div className="bg-white min-h-screen">
@@ -130,7 +137,7 @@ const BlogDetails = () => {
             {/* Tags & Share */}
             <div className="mt-16 pt-10 border-t border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="flex flex-wrap gap-3">
-                {blog.tags?.map(tag => (
+                {(blog.tags || ["Aether", "RFID", "IoT", blog.category]).map(tag => (
                   <span key={tag} className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors cursor-pointer">
                     #{tag}
                   </span>
@@ -156,17 +163,19 @@ const BlogDetails = () => {
             </div>
             
             {/* Author Bio Box */}
-            <div className="mt-16 bg-gray-50 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-24 h-24 rounded-full bg-brand-blue text-white flex items-center justify-center text-4xl font-bold shrink-0">
-                {blog.author.charAt(0)}
+            {blog.author && (
+              <div className="mt-16 bg-gray-50 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+                <div className="w-24 h-24 rounded-full bg-brand-blue text-white flex items-center justify-center text-4xl font-bold shrink-0">
+                  {blog.author.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Written by {blog.author}</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    {blog.author} is a senior technology consultant at Aether-RFID with extensive experience in enterprise IoT implementations, RFID logistics architectures, and digital systems integration.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Written by {blog.author}</h4>
-                <p className="text-gray-600 leading-relaxed">
-                  Arjun is a senior technology consultant at Aether-RFID with over 12 years of experience in supply chain optimization and IoT systems design. He regularly writes about the intersection of hardware and digital transformation.
-                </p>
-              </div>
-            </div>
+            )}
           </article>
 
           {/* Sidebar */}
@@ -178,7 +187,7 @@ const BlogDetails = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b-2 border-brand-blue w-fit">Related Posts</h3>
                 <div className="space-y-8">
                   {relatedPosts.map(post => (
-                    <Link key={post.id} to={`/blog/${post.id}`} className="flex gap-4 group">
+                    <Link key={post._id || post.id} to={`/blog/${post._id || post.id}`} className="flex gap-4 group">
                       <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0">
                         <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
@@ -199,10 +208,10 @@ const BlogDetails = () => {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                 <h3 className="text-xl font-bold mb-4 relative z-10">Subscribe to our Newsletter</h3>
                 <p className="text-blue-100 text-sm mb-6 relative z-10">Get the latest insights delivered straight to your inbox.</p>
-                <div className="space-y-3 relative z-10">
+                <form className="space-y-3 relative z-10" onSubmit={(e) => e.preventDefault()}>
                   <input type="email" placeholder="Your Email" className="w-full bg-white/20 border border-white/20 rounded-xl px-4 py-3 text-sm placeholder:text-white/50 outline-none focus:bg-white/30 transition-all" />
                   <button className="w-full bg-brand-orange text-white font-bold py-3 rounded-xl hover:bg-white hover:text-brand-blue transition-all">Subscribe Now</button>
-                </div>
+                </form>
               </div>
             </div>
           </aside>
@@ -227,3 +236,4 @@ const BlogDetails = () => {
 };
 
 export default BlogDetails;
+

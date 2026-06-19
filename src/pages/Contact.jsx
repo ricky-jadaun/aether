@@ -1,6 +1,62 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { useState } from "react";
+import { useContent } from "../context/ContentContext";
 
 const Contact = () => {
+  const { submitContactForm } = useContent();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: ""
+  });
+
+  const [status, setStatus] = useState({
+    submitting: false,
+    success: false,
+    error: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus({ submitting: false, success: false, error: "Please fill in all required fields (Name, Email, Message)" });
+      return;
+    }
+
+    try {
+      setStatus({ submitting: true, success: false, error: "" });
+      await submitContactForm(formData);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: ""
+      });
+      setStatus({ submitting: false, success: true, error: "" });
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: false }));
+      }, 5000);
+    } catch (error) {
+      setStatus({
+        submitting: false,
+        success: false,
+        error: error.message || "Failed to send message. Please try again."
+      });
+    }
+  };
+
   const addresses = [
     {
       title: "Corporate Office",
@@ -56,70 +112,107 @@ const Contact = () => {
               <div className="w-3 h-3 rounded-full bg-brand-green"></div>
               <div className="h-[2px] w-20 bg-gray-200"></div>
             </div>
-            {/* <p className="text-gray-600 text-lg">
-              Have questions about our products or services? Fill out the form and our team will get back to you within 24 hours.
-            </p> */}
           </div>
 
           {/* Contact Form */}
           <div className="bg-gray-50 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="John Doe"
+                    required
                     className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="john@example.com"
+                    required
                     className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
                   />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                <input 
-                  type="tel" 
-                  placeholder="123-456-7890"
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
-                />
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="123-456-7890"
+                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Company Name</label>
+                  <input 
+                    type="text" 
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your Company Name"
+                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
+                  />
+                </div>
               </div>
+
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Company Name</label>
-                <input 
-                  type="text" 
-                  placeholder="Your Company Name"
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all"
-                />
-              </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
                 <textarea 
                   rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell us more about your requirements..."
+                  required
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all resize-none"
                 ></textarea>
               </div>
+
+              {status.success && (
+                <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl">
+                  <CheckCircle size={20} className="shrink-0" />
+                  <span>Thank you! Your message has been sent successfully. We will get back to you shortly.</span>
+                </div>
+              )}
+
+              {status.error && (
+                <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl">
+                  <AlertCircle size={20} className="shrink-0" />
+                  <span>{status.error}</span>
+                </div>
+              )}
+
               <button 
                 type="submit"
-                className="w-full bg-brand-blue text-white font-bold py-4 rounded-xl hover:bg-brand-blue/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-blue/20"
+                disabled={status.submitting}
+                className="w-full bg-brand-blue text-white font-bold py-4 rounded-xl hover:bg-brand-blue/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-blue/20 disabled:bg-gray-400 disabled:scale-100 disabled:cursor-not-allowed"
               >
-                <Send size={20} />
-                Send Message
+                {status.submitting ? "Sending..." : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
         </div>
       </section>
+
 
       {/* 3. Google Map Image Section with Pins */}
       <section className="py-20 bg-brand-blue overflow-hidden">

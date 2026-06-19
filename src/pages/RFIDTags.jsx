@@ -108,6 +108,46 @@ const RFIDTags = () => {
         </div>
       </section>
 
+          {/* CTA Section - Unique Glassmorphism Design */}
+      <section className="pt-12 pb-24 px-5 lg:px-10">
+        <div className="max-w-[1200px] mx-auto relative">
+          <div className="absolute inset-0 bg-brand-blue rounded-[60px] transform -rotate-1 skew-y-1"></div>
+          <div className="relative bg-[#0f172a] rounded-[60px] p-12 md:p-24 overflow-hidden shadow-2xl border border-white/10">
+            {/* Abstract Background Design */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-orange/20 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-green/20 rounded-full blur-[80px]"></div>
+
+            <div className="relative z-10 text-center max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                Ready to Choose the <br />
+                <span className="text-brand-orange">Right RFID Tags for Your Needs?</span>
+              </h2>
+              <p className="text-gray-400 text-lg mb-12">
+                Whether you need long-range UHF or secure HF tags, our team will help you select the best option for your tracking, access, and inventory goals.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link to="/contact" className="w-full sm:w-auto bg-brand-orange text-white font-medium px-12 py-5 rounded-2xl tracking-wide hover:bg-brand-orange/90 hover:scale-105 transition-all shadow-lg shadow-brand-orange/20">
+                  Contact Us Now
+                </Link>
+                <a
+                  href="/assets/RFID%20products/TagsCatalogue.pptx"
+                  download
+                  className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white font-medium tracking-wide px-12 py-5 rounded-2xl hover:bg-white/10 transition-all"
+                >
+                  <Download size={20} className="group-hover:translate-y-1 transition-transform" />
+                  Download Datasheets
+                </a>
+              </div>
+
+              <p className="mt-8 text-sm text-gray-500 font-medium uppercase tracking-[0.2em]">
+                PDF • Latest Revision • 2024
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

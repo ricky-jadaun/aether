@@ -31,7 +31,7 @@ const RFIDHardware = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0f18]">
         {/* Background Grid Pattern */}
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-        
+
         {/* Animated Orbs */}
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-blue/30 rounded-full blur-[120px] animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-orange/20 rounded-full blur-[120px]"></div>
@@ -63,12 +63,12 @@ const RFIDHardware = () => {
           <div className="relative">
             <div className="relative z-20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/20 p-4 rounded-[48px] shadow-2xl overflow-hidden group">
               <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors"></div>
-              <img 
-                src="/assets/rfid-hardware.jpg" 
-                alt="RFID Hardware" 
+              <img
+                src="/assets/rfid-hardware.jpg"
+                alt="RFID Hardware"
                 className="relative z-10 w-full h-auto object-contain rounded-3xl mix-blend-screen opacity-90 group-hover:scale-110 transition-transform duration-700"
               />
-              
+
               {/* Floating feature tags */}
               <div className="absolute top-10 right-10 bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/20 animate-bounce duration-[3000ms]">
                 <Cpu className="text-brand-orange" size={32} />
@@ -77,7 +77,7 @@ const RFIDHardware = () => {
                 <ShieldCheck className="text-brand-green" size={32} />
               </div>
             </div>
-            
+
             {/* Decorative rings */}
             <div className="absolute -top-10 -left-10 w-40 h-40 border border-white/5 rounded-full"></div>
             <div className="absolute -bottom-20 -right-20 w-80 h-80 border border-white/5 rounded-full"></div>
@@ -108,7 +108,7 @@ const RFIDHardware = () => {
             {/* Abstract Background Design */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-orange/20 rounded-full blur-[100px]"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-green/20 rounded-full blur-[80px]"></div>
-            
+
             <div className="relative z-10 text-center max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
                 Ready to Implement a <br />
@@ -117,17 +117,21 @@ const RFIDHardware = () => {
               <p className="text-gray-400 text-lg mb-12">
                 Whether you're looking for specialized readers or a full-scale deployment, our team of experts is here to guide your hardware selection process.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link to="/contact" className="w-full sm:w-auto bg-brand-orange text-white font-bold px-12 py-5 rounded-2xl hover:bg-brand-orange/90 hover:scale-105 transition-all shadow-lg shadow-brand-orange/20">
+                <Link to="/contact" className="w-full sm:w-auto bg-brand-orange text-white font-medium px-12 py-5 tracking-wide rounded-2xl hover:bg-brand-orange/90 hover:scale-105 transition-all shadow-lg shadow-brand-orange/20">
                   Contact Us Now
                 </Link>
-                <button className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold px-12 py-5 rounded-2xl hover:bg-white/10 transition-all">
+                <a
+                  href="/assets/RFID%20products/ReadersCatalogue.pptx"
+                  download
+                  className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white tracking-wide font-medium px-12 py-5 rounded-2xl hover:bg-white/10 transition-all"
+                >
                   <Download size={20} className="group-hover:translate-y-1 transition-transform" />
                   Download Datasheets
-                </button>
+                </a>
               </div>
-              
+
               <p className="mt-8 text-sm text-gray-500 font-medium uppercase tracking-[0.2em]">
                 PDF • Latest Revision • 2024
               </p>

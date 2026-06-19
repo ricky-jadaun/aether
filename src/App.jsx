@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -23,10 +23,17 @@ import FactoryAutomationSoftware from "./pages/FactoryAutomationSoftware";
 import IoTTechnology from "./pages/IoTTechnology";
 import Barcodes from "./pages/Barcodes";
 
+// Admin Panel Pages
+import Login from "./pages/admin/Login";
+import Dashboard from "./pages/admin/Dashboard";
+
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <>
-      <Header />
+      {!isAdminRoute && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -54,10 +61,15 @@ function App() {
         <Route path="/about/company-overview" element={<CompanyOverview />} />
         <Route path="/about/team" element={<Team />} />
         <Route path="/about/career" element={<Careers />} />
+
+        {/* Admin Panel Routes */}
+        <Route path="/admin" element={<Login />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
       </Routes>
-      <Footer />
+      {!isAdminRoute && <Footer />}
     </>
   );
 }
 
 export default App;
+

@@ -1,7 +1,10 @@
-import { Link as LinkIcon, Mail, Users } from "lucide-react";
+import { Link as LinkIcon, Mail } from "lucide-react";
+import { useContent } from "../context/ContentContext";
 
 const Team = () => {
-  const teamMembers = [
+  const { team: dbTeam } = useContent();
+
+  const fallbackTeam = [
     {
       name: "Rajesh Kumar",
       role: "Founder & CEO",
@@ -40,6 +43,8 @@ const Team = () => {
     }
   ];
 
+  const teamMembers = dbTeam && dbTeam.length > 0 ? dbTeam : fallbackTeam;
+
   return (
     <div className="bg-white">
       {/* 1. Hero Section (Standardized) */}
@@ -65,12 +70,11 @@ const Team = () => {
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Meet Our Experts</h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-[2px] w-20 bg-gray-200"></div>
-            <div className="w-3 h-3 rounded-full bg-brand-green"></div>
-            <div className="h-[2px] w-20 bg-gray-200"></div>
-          </div>
-            
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-[2px] w-20 bg-gray-200"></div>
+              <div className="w-3 h-3 rounded-full bg-brand-green"></div>
+              <div className="h-[2px] w-20 bg-gray-200"></div>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
             {teamMembers.map((member, idx) => (
@@ -89,7 +93,7 @@ const Team = () => {
                       <a href="#" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-orange transition-colors">
                         <LinkIcon size={18} />
                       </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-green transition-colors">
+                      <a href={`mailto:${member.name.toLowerCase().replace(" ", "")}@aetherrfid.com`} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-green transition-colors">
                         <Mail size={18} />
                       </a>
                     </div>
@@ -105,11 +109,9 @@ const Team = () => {
           </div>
         </div>
       </section>
-
-      
-      
     </div>
   );
 };
 
 export default Team;
+
