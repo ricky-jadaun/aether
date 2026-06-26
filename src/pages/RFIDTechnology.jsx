@@ -82,9 +82,9 @@ const RFIDTechnology = () => {
               Pioneering intelligent automation through cutting-edge RFID tag development and manufacturing. We don't just track assets; we optimize your entire business ecosystem.
             </p>
             <div className="flex flex-wrap gap-5">
-              <button className="bg-brand-orange text-white font-bold px-10 py-4 rounded-full hover:scale-105 transition-all ">
+              <Link to="/products/rfid/hardware" className="bg-brand-orange text-white font-bold px-10 py-4 rounded-full hover:scale-105 transition-all ">
                 Explore Products
-              </button>
+              </Link>
               <Link to="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-all">
                 Contact Experts
               </Link>
